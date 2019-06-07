@@ -7,7 +7,7 @@
 #include <d3dx9.h>
 #include <windows.h>
 
-namespace Lib {
+namespace Device {
 
 	static HWND hwnd = nullptr;
 	static LPDIRECT3D9 d3d9 = nullptr;

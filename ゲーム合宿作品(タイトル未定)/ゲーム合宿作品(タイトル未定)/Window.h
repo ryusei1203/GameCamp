@@ -1,9 +1,9 @@
 ﻿#pragma once
-#include "Common.h"
+#include <windows.h>
 
 namespace Window {
 
-	extern HWND hwnd;
+	static HWND hwnd = nullptr;
 
 	// Windowサイズ
 	#define WINDOW_W (800)

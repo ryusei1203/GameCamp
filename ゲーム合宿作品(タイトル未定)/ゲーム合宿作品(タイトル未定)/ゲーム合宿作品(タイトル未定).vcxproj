@@ -122,7 +122,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="D3D.cpp">
+    <ClCompile Include="Device.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -130,7 +130,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
+    <ClCompile Include="Texture.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -140,15 +140,11 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="D3D.h">
+    <ClInclude Include="Device.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Lib.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Window.h">
+    <ClInclude Include="Texture.h">
       <SubType>
       </SubType>
     </ClInclude>
