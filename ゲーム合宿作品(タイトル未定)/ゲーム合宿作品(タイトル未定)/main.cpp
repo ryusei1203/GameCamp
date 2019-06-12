@@ -1,22 +1,33 @@
-﻿#include "Device.h"
+﻿#include "Window.h"
+#include "D3D.h"
+#include "Texture.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 
-	// 初期化
-	Device::Init();
+	// ウィンドウ初期化
+	Window::Init();
+
+	// D3D初期化
+	D3D::Init();
+
+	// 画像読み込み
+	Texture::Load(Texture::TEST);
 
 	// メインループ
-	while (Device::ProcessMassage()) {
+	while (Window::ProcessMassage()) {
 
 		// 描画開始
-		Device::DrawStart();
+		D3D::DrawStart();
+
+		// 描画
+		Texture::DrawBox2D(Texture::TEST);
 
 		// 描画終了
-		Device::DrawEnd();
+		D3D::DrawEnd();
 	}
 	
 	// D3D解放
-	Device::Release();
+	D3D::Release();
 
 	return 0;
 }

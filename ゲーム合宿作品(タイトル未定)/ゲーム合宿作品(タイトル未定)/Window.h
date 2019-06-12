@@ -1,15 +1,17 @@
 ﻿#pragma once
+
 #include <windows.h>
 
 namespace Window {
 
-	static HWND hwnd = nullptr;
+	// ウィンドウハンドル
+	extern HWND hwnd;
 
 	// Windowサイズ
 	#define WINDOW_W (800)
 	#define WINDOW_H (600)
 
-	// 初期化
+	// ウィンドウ情報初期化
 	void Init();
 
 	// ウィンドウプロシージャ
@@ -23,12 +25,12 @@ namespace Window {
 	void RegisterWindowClass(WNDCLASSEX window_class, HINSTANCE instance);
 
 	// ウィンドウリサイズ
-	void ResizeWindow(HWND hwnd);
+	void Resize(HWND hwnd);
 
 	// ウィンドウ生成
-	void MakeWindow(HINSTANCE instance);
+	void Create(HINSTANCE instance);
 
 	// メッセージ処理
 	bool ProcessMassage();
-};
+}
 

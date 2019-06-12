@@ -1,10 +1,18 @@
 ﻿#include "D3D.h"
+#include "Window.h"
 
 namespace D3D {
 
-	/*----初期化----*/
+	// IDirect3D9
+	LPDIRECT3D9 d3d9 = nullptr;
+
+	// IDirect3Dデバイス
+	LPDIRECT3DDEVICE9 dev = nullptr;
+
+	/*----D3D9初期化----*/
 	void Init() {
 
+		// PresentParameters設定
 		D3DPRESENT_PARAMETERS pp{};
 		{
 			// バックバッファの幅(横)
@@ -39,6 +47,7 @@ namespace D3D {
 
 		// LPDIRECT3D9初期化
 		d3d9 = Direct3DCreate9(D3D_SDK_VERSION);
+
 		// nullチェック
 		if (d3d9 == NULL) {
 			return;
@@ -65,68 +74,7 @@ namespace D3D {
 		// ビューポート設定
 		RegisterViewPort(dev, pp);
 	}
-	/*----初期化----*/
-
-	/*----PresentParametersの設定----*/
-	void RegisterPP(D3DPRESENT_PARAMETERS pp) {
-
-		// バックバッファの幅(横)
-		pp.BackBufferWidth = 0;
-		// バックバッファの幅(縦)
-		pp.BackBufferHeight = 0;
-		// バックバッファのフォーマット
-		pp.BackBufferFormat = D3DFMT_A8R8G8B8;
-		// バックバッファの数
-		pp.BackBufferCount = 1;
-		// マルチサンプル数
-		pp.MultiSampleType = D3DMULTISAMPLE_4_SAMPLES;
-		// マルチサンプル品質レベル
-		pp.MultiSampleQuality = 0;
-		// スワップエフェクトの種類
-		pp.SwapEffect = D3DSWAPEFFECT_DISCARD;
-		// 画面を描画するウィンドウハンドル
-		pp.hDeviceWindow = Window::hwnd;
-		// ウィンドウモード
-		pp.Windowed = TRUE;
-		// 深度ステンシルバッファのフォーマット
-		pp.EnableAutoDepthStencil = TRUE;
-		// ステンシルバッファのフォーマット
-		pp.AutoDepthStencilFormat = D3DFMT_D24S8;
-		// バックバッファからフロントバッファへの転送時のオプション
-		pp.Flags = D3DPRESENTFLAG_DISCARD_DEPTHSTENCIL;
-		// フルスクリーンでのリフレッシュレート
-		pp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;
-		// スワップエフェクトの書き換えタイミング
-		pp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
-	}
-	/*----PresentParametersの設定----*/
-
-	void CreateDevice(LPDIRECT3DDEVICE9 dev, D3DPRESENT_PARAMETERS pp) {
-
-		d3d9 = Direct3DCreate9(D3D_SDK_VERSION);
-		// nullチェック
-		if (d3d9 == NULL) {
-			return;
-		}
-
-		// IDirect3DDevice作成
-		if (d3d9->CreateDevice(
-			// ディスプレイアダプタの種類
-			D3DADAPTER_DEFAULT,
-			// デバイスの種類
-			D3DDEVTYPE_HAL,
-			// このデバイスのウィンドウハンドル
-			Window::hwnd,
-			// デバイス制御の組み合わせ
-			D3DCREATE_HARDWARE_VERTEXPROCESSING,
-			// デバイスを設定するためのD3DPRESENT_PARAMETERS構造体
-			&pp,
-			// 作成されたIDirect3DDeviceの格納
-			&dev
-		) != D3D_OK) {
-			return;
-		}
-	}
+	/*----D3D9初期化----*/
 
 	/*----ViewPortの設定----*/
 	void RegisterViewPort(LPDIRECT3DDEVICE9 dev, D3DPRESENT_PARAMETERS pp) {
@@ -204,3 +152,4 @@ namespace D3D {
 	}
 	/*----D3D9解放----*/
 }
+
