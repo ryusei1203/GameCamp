@@ -1,7 +1,7 @@
-﻿#include "Window.h"
-#include "D3D.h"
-#include "Texture.h"
-#include "Draw2D.h"
+﻿#include "../Lib/Window/Window.h"
+#include "../Lib/D3D/D3D.h"
+#include "../Lib/Texture/Texture.h"
+#include "../Lib/Draw2D/Draw2D.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 

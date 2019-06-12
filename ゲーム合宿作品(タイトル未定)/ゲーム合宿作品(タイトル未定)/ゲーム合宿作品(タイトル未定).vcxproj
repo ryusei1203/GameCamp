@@ -122,45 +122,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="D3D.cpp">
+    <ClCompile Include="Lib\D3D\D3D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Draw2D.cpp">
+    <ClCompile Include="Lib\Draw2D\Draw2D.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Main\main.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="Lib\Texture\Texture.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
+    <ClCompile Include="Lib\Window\Window.cpp">
       <SubType>
       </SubType>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common.h">
+    <ClInclude Include="Lib\D3D\D3D.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="D3D.h">
+    <ClInclude Include="Lib\Draw2D\Draw2D.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Draw2D.h">
+    <ClInclude Include="Lib\Texture\Texture.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Window.h">
+    <ClInclude Include="Lib\Window\Window.h">
       <SubType>
       </SubType>
     </ClInclude>

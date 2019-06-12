@@ -1,7 +1,6 @@
 ﻿#pragma once
 
-#include "Texture.h"
-#include "D3D.h"
+#include "../Texture/Texture.h"
 
 namespace Draw2D {
 

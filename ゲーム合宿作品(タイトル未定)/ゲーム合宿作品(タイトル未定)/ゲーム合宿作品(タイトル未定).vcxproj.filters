@@ -13,39 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{1d8c2b9e-e231-44a9-8329-27f684938ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{db2b0fd9-a515-4782-b5dd-03d7918b06b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\D3D">
+      <UniqueIdentifier>{9f07cedb-c9e9-42e5-ad5c-f2ca11820117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\Draw2D">
+      <UniqueIdentifier>{cd8d44b7-88b8-4042-aec0-5b15f0a4bd78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\Texture">
+      <UniqueIdentifier>{ff7520fe-13ed-499a-8cf1-1a50f955146e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\WIndow">
+      <UniqueIdentifier>{23c94161-3f4a-4cca-ab91-1e88b97fb651}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Main\main.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Lib\D3D\D3D.cpp">
+      <Filter>Lib\D3D</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Lib\Draw2D\Draw2D.cpp">
+      <Filter>Lib\Draw2D</Filter>
     </ClCompile>
-    <ClCompile Include="D3D.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Lib\Texture\Texture.cpp">
+      <Filter>Lib\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="Draw2D.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Lib\Window\Window.cpp">
+      <Filter>Lib\WIndow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Lib\D3D\D3D.h">
+      <Filter>Lib\D3D</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Lib\Draw2D\Draw2D.h">
+      <Filter>Lib\Draw2D</Filter>
     </ClInclude>
-    <ClInclude Include="Window.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Lib\Texture\Texture.h">
+      <Filter>Lib\Texture</Filter>
     </ClInclude>
-    <ClInclude Include="D3D.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Draw2D.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="Lib\Window\Window.h">
+      <Filter>Lib\WIndow</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

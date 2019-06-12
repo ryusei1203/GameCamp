@@ -1,4 +1,5 @@
 ﻿#include "Draw2D.h"
+#include "D3D.h"
 
 namespace Draw2D {
 

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "D3D.h"
+#include "../D3D/D3D.h"
 
 #include <vector>
 
