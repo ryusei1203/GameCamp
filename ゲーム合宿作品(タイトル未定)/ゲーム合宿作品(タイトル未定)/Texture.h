@@ -9,21 +9,6 @@
 
 namespace Texture {
 
-	// 頂点情報
-	struct CustomVetrex {
-
-		// 頂点情報
-		float x, y, z;
-
-		// 除算数
-		float rhw;
-
-		DWORD dw_color;
-
-		// テクスチャ座標
-		float u, v;
-	};
-
 	// テクスチャデータ
 	struct TextureData {
 
@@ -34,6 +19,9 @@ namespace Texture {
 		float width, height;
 	};
 
+	// データリスト
+	extern std::vector<TextureData> texture_list;
+
 	// 外部で管理予定
 	// テクスチャデータID
 	enum TextureID {
@@ -42,8 +30,5 @@ namespace Texture {
 
 	// テクスチャ読み込み
 	void Load(TextureID texture_id);
-
-	// 四角形描画
-	void DrawBox2D(TextureID texture_id);
 }
 

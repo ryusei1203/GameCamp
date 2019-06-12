@@ -1,6 +1,7 @@
 ﻿#include "Window.h"
 #include "D3D.h"
 #include "Texture.h"
+#include "Draw2D.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 
@@ -20,7 +21,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 		D3D::DrawStart();
 
 		// 描画
-		Texture::DrawBox2D(Texture::TEST);
+		Draw2D::Box(Texture::TEST);
 
 		// 描画終了
 		D3D::DrawEnd();
