@@ -9,7 +9,7 @@ class Enemy : public EnemyBase {
 public :
 	// コンストラクタ
 	Enemy() {
-		info.pos = { 64.f,64.f };
+		m_info.pos = { 64.f,64.f };
 	};
 
 private:

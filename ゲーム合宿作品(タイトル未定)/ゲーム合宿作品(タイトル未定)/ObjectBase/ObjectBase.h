@@ -8,7 +8,7 @@ class ObjectBase {
 public:
 	// コンストラクタ
 	ObjectBase(){
-		info.pos = { 0.f,0.f };
+		m_info.pos = { 0.f,0.f };
 	};
 	
 	// デストラクタ
@@ -30,6 +30,6 @@ private:
 
 protected:
 
-	Info info;
+	Info m_info;
 };
 

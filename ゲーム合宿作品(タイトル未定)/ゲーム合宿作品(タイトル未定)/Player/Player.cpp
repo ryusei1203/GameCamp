@@ -11,5 +11,5 @@ void Player::Update() {
 void Player::Draw() {
 
 	// テスト描画
-	Draw2D::Box(ResourceManager::TEST1_ID, info.pos);
+	Draw2D::Box(ResourceManager::TEST1_ID, m_info.pos);
 }

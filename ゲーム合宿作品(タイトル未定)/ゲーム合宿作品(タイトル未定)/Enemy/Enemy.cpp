@@ -11,6 +11,6 @@ void Enemy::Update() {
 void Enemy::Draw() {
 	
 	// テスト描画
-	Draw2D::Box(ResourceManager::TEST2_ID, info.pos);
+	Draw2D::Box(ResourceManager::TEST2_ID, m_info.pos);
 }
 
