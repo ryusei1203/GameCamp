@@ -1,14 +1,16 @@
 ﻿#pragma once
 
 #include "../Texture/Texture.h"
+#include "../../ResourceManager/ResourceManager.h"
 
+// 2D描画情報
 namespace Draw2D {
 
 	// 頂点情報
 	struct CustomVetrex {
 
 		// 頂点情報
-		float x, y, z;
+		D3DXVECTOR3 pos;
 
 		// 除算数
 		float rhw;
@@ -17,10 +19,10 @@ namespace Draw2D {
 		DWORD dw_color;
 
 		// テクスチャ座標
-		float u, v;
+		D3DXVECTOR2 uv;
 	};
 
 	// 四角形描画
-	void Box(Texture::TextureID texture_id);
+	void Box(ResourceManager::TextureID texture_id, D3DXVECTOR2 pos);
 }
 

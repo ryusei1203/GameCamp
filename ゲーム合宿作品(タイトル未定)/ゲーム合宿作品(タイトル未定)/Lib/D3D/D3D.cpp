@@ -1,6 +1,7 @@
 ﻿#include "D3D.h"
 #include "../Window/Window.h"
 
+// D3D情報
 namespace D3D {
 
 	// IDirect3D9

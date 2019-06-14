@@ -11,8 +11,8 @@ class ResourceManager {
 public:
 	// テクスチャデータID
 	enum TextureID {
-		TEST_ID,
 		TEST1_ID,
+		TEST2_ID,
 
 		MAX_TEXTURE_ID_NUM
 	};
@@ -36,7 +36,7 @@ public :
 private:
 	// コンストラクタ
 	ResourceManager() : 
-		texture_id(TEST_ID)
+		texture_id(TEST1_ID)
 	{};
 
 	// リソース設定

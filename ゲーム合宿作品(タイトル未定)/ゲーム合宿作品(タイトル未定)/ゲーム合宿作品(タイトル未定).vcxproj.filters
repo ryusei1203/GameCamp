@@ -31,6 +31,21 @@
     <Filter Include="Lib\WIndow">
       <UniqueIdentifier>{23c94161-3f4a-4cca-ab91-1e88b97fb651}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ResourceManager">
+      <UniqueIdentifier>{513f10c1-3fe2-4939-b7d6-411e99358345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{f7e7754f-bf7f-4c40-9fc4-3cf12c55bd7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy">
+      <UniqueIdentifier>{053f1512-45d3-4f18-ae01-37089ed66c2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectBase">
+      <UniqueIdentifier>{168f88c3-83ad-4b1d-9086-ef50fcdbbc2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectManager">
+      <UniqueIdentifier>{527b6469-b4c0-4567-9f38-ede67e4996b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\main.cpp">
@@ -48,6 +63,27 @@
     <ClCompile Include="Lib\Window\Window.cpp">
       <Filter>Lib\WIndow</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceManager\ResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\EnemyBase.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\PlayerBase.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player\Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Enemy.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBase\ObjectBase.cpp">
+      <Filter>ObjectBase</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager\ObjectManager.cpp">
+      <Filter>ObjectManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\D3D\D3D.h">
@@ -61,6 +97,27 @@
     </ClInclude>
     <ClInclude Include="Lib\Window\Window.h">
       <Filter>Lib\WIndow</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\EnemyBase.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\PlayerBase.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player\Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Enemy.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBase\ObjectBase.h">
+      <Filter>ObjectBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager\ObjectManager.h">
+      <Filter>ObjectManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

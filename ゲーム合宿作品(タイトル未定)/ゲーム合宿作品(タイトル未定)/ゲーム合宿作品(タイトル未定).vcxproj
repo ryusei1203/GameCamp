@@ -122,6 +122,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enemy\EnemyBase.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Lib\D3D\D3D.cpp">
       <SubType>
       </SubType>
@@ -142,8 +146,36 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="ObjectBase\ObjectBase.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Enemy\Enemy.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ObjectManager\ObjectManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Player\Player.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Player\PlayerBase.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\ResourceManager.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Enemy\EnemyBase.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Lib\D3D\D3D.h">
       <SubType>
       </SubType>
@@ -157,6 +189,30 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="Lib\Window\Window.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="ObjectBase\ObjectBase.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Enemy\Enemy.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="ObjectManager\ObjectManager.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Player\Player.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Player\PlayerBase.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ResourceManager.h">
       <SubType>
       </SubType>
     </ClInclude>

@@ -6,9 +6,17 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
+/*
+	structかclassに変更
+*/
+
+// D3D情報
 namespace D3D {
 
+	// IDirect3D9
 	extern LPDIRECT3D9 d3d9;
+
+	// IDirect3Dデバイス
 	extern LPDIRECT3DDEVICE9 dev;
 
 	// D3D9初期化
@@ -26,3 +34,4 @@ namespace D3D {
 	// D3D9解放
 	void Release();
 }
+

@@ -1,7 +1,9 @@
 ﻿#include "../Lib/Window/Window.h"
 #include "../Lib/D3D/D3D.h"
-#include "../Lib/Texture/Texture.h"
-#include "../Lib/Draw2D/Draw2D.h"
+#include "../ResourceManager/ResourceManager.h"
+#include "../ObjectBase/ObjectBase.h"
+#include "../Player/Player.h"
+#include "../Enemy/Enemy.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 
@@ -12,7 +14,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 	D3D::Init();
 
 	// 画像読み込み
-	Texture::Load(Texture::TEST);
+	ResourceManager::GetInstance().LoadTexture();
+
+	ObjectBase *player = new Player();
+	ObjectBase *enemy = new Enemy();
 
 	// メインループ
 	while (Window::ProcessMassage()) {
@@ -20,13 +25,21 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 		// 描画開始
 		D3D::DrawStart();
 
-		// 描画
-		Draw2D::Box(Texture::TEST);
+		player->Draw();
+		enemy->Draw();
 
 		// 描画終了
 		D3D::DrawEnd();
 	}
 	
+	delete enemy;
+	enemy = nullptr;
+	delete player;
+	player = nullptr;
+
+	// テクスチャ開放
+	Texture::Release();
+
 	// D3D解放
 	D3D::Release();
 

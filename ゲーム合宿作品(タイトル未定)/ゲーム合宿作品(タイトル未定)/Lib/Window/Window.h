@@ -2,6 +2,7 @@
 
 #include <windows.h>
 
+// ウィンドウ情報
 namespace Window {
 
 	// ウィンドウハンドル
