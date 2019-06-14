@@ -2,11 +2,10 @@
 
 #include "../D3D/D3D.h"
 
-#include <vector>
-
 // 頂点情報フラグの設定
 #define FVF_2D (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
 
+// テクスチャ情報
 namespace Texture {
 
 	// テクスチャデータ
@@ -16,19 +15,13 @@ namespace Texture {
 		LPDIRECT3DTEXTURE9 texture;
 
 		// テクスチャ幅
-		float width, height;
-	};
-
-	// データリスト
-	extern std::vector<TextureData> texture_list;
-
-	// 外部で管理予定
-	// テクスチャデータID
-	enum TextureID {
-		TEST
+		D3DXVECTOR2 uv;
 	};
 
 	// テクスチャ読み込み
-	void Load(TextureID texture_id);
+	TextureData Load(char *file_name);
+
+	// テクスチャ開放
+	void Release();
 }
 
