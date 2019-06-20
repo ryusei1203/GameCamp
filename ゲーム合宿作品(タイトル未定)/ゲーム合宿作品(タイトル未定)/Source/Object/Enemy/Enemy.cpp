@@ -1,7 +1,8 @@
 ﻿#include "Enemy.h"
-#include "../Lib/Draw2D/Draw2D.h"
-#include "../ResourceManager/ResourceManager.h"
+#include "../../Lib/Draw2D/Draw2D.h"
+#include "../../Manager/ResourceManager/ResourceManager.h"
 
+/*----private----*/
 /*----更新----*/
 void Enemy::Update() {
 
@@ -14,4 +15,5 @@ void Enemy::Draw() {
 	Draw2D::Box(ResourceManager::TEST2_ID, m_pos);
 }
 /*----描画----*/
+/*----private----*/
 

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "../Lib/D3D/D3D.h"
+#include "../../Lib/D3D/D3D.h"
 
 // オブジェクト基底
 class ObjectBase {

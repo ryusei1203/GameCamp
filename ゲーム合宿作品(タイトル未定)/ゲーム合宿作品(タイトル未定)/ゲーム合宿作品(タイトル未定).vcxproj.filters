@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Lib">
       <UniqueIdentifier>{1d8c2b9e-e231-44a9-8329-27f684938ffb}</UniqueIdentifier>
     </Filter>
@@ -31,32 +19,44 @@
     <Filter Include="Lib\WIndow">
       <UniqueIdentifier>{23c94161-3f4a-4cca-ab91-1e88b97fb651}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ResourceManager">
-      <UniqueIdentifier>{513f10c1-3fe2-4939-b7d6-411e99358345}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Player">
-      <UniqueIdentifier>{f7e7754f-bf7f-4c40-9fc4-3cf12c55bd7a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Enemy">
-      <UniqueIdentifier>{053f1512-45d3-4f18-ae01-37089ed66c2d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ObjectBase">
-      <UniqueIdentifier>{168f88c3-83ad-4b1d-9086-ef50fcdbbc2d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ObjectManager">
-      <UniqueIdentifier>{527b6469-b4c0-4567-9f38-ede67e4996b7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Lib\KeyInput">
       <UniqueIdentifier>{00161008-662e-4ea3-bf23-1604ace63432}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{66a9ea19-4606-4d23-97e1-07e6741c97ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Enemy">
+      <UniqueIdentifier>{053f1512-45d3-4f18-ae01-37089ed66c2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Player">
+      <UniqueIdentifier>{f7e7754f-bf7f-4c40-9fc4-3cf12c55bd7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\ObjectBase">
+      <UniqueIdentifier>{168f88c3-83ad-4b1d-9086-ef50fcdbbc2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\EnemyBase">
+      <UniqueIdentifier>{a48ec274-e71b-4239-af1b-79be4bd21412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\PlayerBase">
+      <UniqueIdentifier>{98cbe815-0b48-464b-baf0-db68dc3d1c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Bullet">
+      <UniqueIdentifier>{895b709a-b2d4-44a8-b3e2-cfcb17d29418}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{d11970d8-b4ea-4b87-96ea-3ef6414f30cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ObjectManager">
+      <UniqueIdentifier>{527b6469-b4c0-4567-9f38-ede67e4996b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\ResourceManager">
+      <UniqueIdentifier>{513f10c1-3fe2-4939-b7d6-411e99358345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\BulletBase">
+      <UniqueIdentifier>{fa0ef8e8-2507-4ee8-81d5-45b6320bd234}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Enemy\Enemy.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Enemy\EnemyBase.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Lib\D3D\D3D.cpp">
       <Filter>Lib\D3D</Filter>
     </ClCompile>
@@ -75,29 +75,35 @@
     <ClCompile Include="Source\Main\main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ObjectBase\ObjectBase.cpp">
-      <Filter>ObjectBase</Filter>
+    <ClCompile Include="Source\Object\ObjectBase\ObjectBase.cpp">
+      <Filter>Object\ObjectBase</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ObjectManager\ObjectManager.cpp">
-      <Filter>ObjectManager</Filter>
+    <ClCompile Include="Source\Object\Player\Player.cpp">
+      <Filter>Object\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player\Player.cpp">
-      <Filter>Player</Filter>
+    <ClCompile Include="Source\Object\Enemy\Enemy.cpp">
+      <Filter>Object\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player\PlayerBase.cpp">
-      <Filter>Player</Filter>
+    <ClCompile Include="Source\Object\EnemyBase\EnemyBase.cpp">
+      <Filter>Object\EnemyBase</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ResourceManager\ResourceManager.cpp">
-      <Filter>ResourceManager</Filter>
+    <ClCompile Include="Source\Manager\ObjectManager\ObjectManager.cpp">
+      <Filter>Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager\ResourceManager\ResourceManager.cpp">
+      <Filter>Manager\ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Bullet\Bullet.cpp">
+      <Filter>Object\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\BulletBase\Bulletbase.cpp">
+      <Filter>Object\BulletBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\PlayerBase\PlayerBase.cpp">
+      <Filter>Object\PlayerBase</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Enemy\Enemy.h">
-      <Filter>Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Enemy\EnemyBase.h">
-      <Filter>Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Lib\D3D\D3D.h">
       <Filter>Lib\D3D</Filter>
     </ClInclude>
@@ -113,20 +119,32 @@
     <ClInclude Include="Source\Lib\Window\Window.h">
       <Filter>Lib\WIndow</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ObjectBase\ObjectBase.h">
-      <Filter>ObjectBase</Filter>
+    <ClInclude Include="Source\Object\ObjectBase\ObjectBase.h">
+      <Filter>Object\ObjectBase</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ObjectManager\ObjectManager.h">
-      <Filter>ObjectManager</Filter>
+    <ClInclude Include="Source\Object\Player\Player.h">
+      <Filter>Object\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player\Player.h">
-      <Filter>Player</Filter>
+    <ClInclude Include="Source\Object\Enemy\Enemy.h">
+      <Filter>Object\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player\PlayerBase.h">
-      <Filter>Player</Filter>
+    <ClInclude Include="Source\Object\EnemyBase\EnemyBase.h">
+      <Filter>Object\EnemyBase</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ResourceManager\ResourceManager.h">
-      <Filter>ResourceManager</Filter>
+    <ClInclude Include="Source\Manager\ObjectManager\ObjectManager.h">
+      <Filter>Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Manager\ResourceManager\ResourceManager.h">
+      <Filter>Manager\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Bullet\Bullet.h">
+      <Filter>Object\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\BulletBase\BulletBase.h">
+      <Filter>Object\BulletBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\PlayerBase\PlayerBase.h">
+      <Filter>Object\PlayerBase</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

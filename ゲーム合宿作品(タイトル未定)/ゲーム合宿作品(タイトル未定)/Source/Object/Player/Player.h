@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "PlayerBase.h"
+#include "../PlayerBase/PlayerBase.h"
 
 // プレイヤー
 class Player : public PlayerBase {

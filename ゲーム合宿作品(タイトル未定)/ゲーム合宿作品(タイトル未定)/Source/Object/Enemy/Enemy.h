@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "EnemyBase.h"
+#include "../EnemyBase/EnemyBase.h"
 
 #include "Enemy.h"
 

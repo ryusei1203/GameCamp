@@ -1,19 +1,21 @@
 ﻿#pragma once
 
-#include "../ObjectBase/ObjectBase.h"
+#include "../../Object/ObjectBase/ObjectBase.h"
 
 // オブジェクト管理
 class ObjectManager {
 public :
 	// コンストラクタ
 	ObjectManager();
-	// デストラクタ
-	~ObjectManager();
 	// 更新
 	void Update();
 	// 描画
 	void Draw();
+	// デストラクタ
+	~ObjectManager();
 private:
+	// プレイヤーインスタンス
 	ObjectBase *player;
+	// エネミーインスタンス
 	ObjectBase *enemy;
 };

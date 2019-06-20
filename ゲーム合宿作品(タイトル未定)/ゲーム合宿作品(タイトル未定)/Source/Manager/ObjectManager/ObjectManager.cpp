@@ -1,8 +1,9 @@
-﻿#include "../Player/Player.h"
-#include "../Enemy/Enemy.h"
+﻿#include "../../Object/Player/Player.h"
+#include "../../Object/Enemy/Enemy.h"
 #include "ObjectManager.h"
 
-// コンストラクタ
+/*----public----*/
+/*----コンストラクタ----*/
 ObjectManager::ObjectManager() {
 
 	// プレイヤー
@@ -10,16 +11,7 @@ ObjectManager::ObjectManager() {
 	// エネミー
 	enemy = new Enemy();
 }
-
-// デストラクタ
-ObjectManager::~ObjectManager() {
-	// エネミー
-	delete enemy;
-	enemy = nullptr;
-	// プレイヤー
-	delete player;
-	player = nullptr;
-}
+/*----コンストラクタ----*/
 
 /*----更新----*/
 void ObjectManager::Update() {
@@ -38,4 +30,16 @@ void ObjectManager::Draw() {
 	enemy->Draw();
 }
 /*----描画----*/
+
+/*----デストラクタ----*/
+ObjectManager::~ObjectManager() {
+	// エネミー
+	delete enemy;
+	enemy = nullptr;
+	// プレイヤー
+	delete player;
+	player = nullptr;
+}
+/*----デストラクタ----*/
+/*----public----*/
 

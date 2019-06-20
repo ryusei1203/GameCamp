@@ -1,19 +1,22 @@
 ﻿#include "ResourceManager.h"
 
+/*----public----*/
 /*----テクスチャ読み込み----*/
 void ResourceManager::LoadTexture() {
 	// 全テクスチャを登録
 	for (int i = 0; i < MAX_TEXTURE_ID_NUM; i++) {
 		// テクスチャリソース設定
-		SetTexture(texture_id);
+		SettingTexture(texture_id);
 		// enum加算
 		texture_id = static_cast<TextureID>(texture_id + 1);
 	}
 }
 /*----テクスチャ読み込み----*/
+/*----public----*/
 
+/*----private----*/
 /*----テクスチャリソース設定----*/
-void ResourceManager::SetTexture(TextureID texture_id) {
+void ResourceManager::SettingTexture(TextureID texture_id) {
 	// テクスチャIDによってリソース変更
 	switch (texture_id) {
 	// テスト、プレイヤー
@@ -24,6 +27,9 @@ void ResourceManager::SetTexture(TextureID texture_id) {
 	case TEST2_ID:
 		m_texture_file_list.push_back((char*)"Resource/test2.png");
 		break;
+	// テスト、弾
+	case TEST3_ID:
+		m_texture_file_list.push_back((char*)"Resource/test3.png");
 	// それ以外
 	default:
 		break;
@@ -32,4 +38,5 @@ void ResourceManager::SetTexture(TextureID texture_id) {
 	m_texture_list.push_back(Texture::Load(m_texture_file_list[texture_id]));
 }
 /*----テクスチャリソース設定----*/
+/*----private----*/
 
