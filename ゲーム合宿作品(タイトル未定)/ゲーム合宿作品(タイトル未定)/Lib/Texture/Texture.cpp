@@ -4,12 +4,9 @@
 
 // テクスチャ情報
 namespace Texture {
-
 	TextureData texture;
-
 	/*----テクスチャ読み込み----*/
 	TextureData Load(char *file_name) {
-
 		// テクスチャファイル読み込み
 		if (D3DXCreateTextureFromFileA(
 			// 読み込みで使用するデバイス
@@ -19,20 +16,20 @@ namespace Texture {
 			// 読み込まれたテクスチャの保存先
 			&texture.texture
 		) != D3D_OK) {
-			//return;
-		}
 
+
+			// ここ何とかしたい
+
+
+		}
 		// テクスチャサイズ取得用
 		D3DXIMAGE_INFO texture_info;
-
 		// テクスチャサイズ取得
 		if (D3DXGetImageInfoFromFileA(file_name, &texture_info) == D3D_OK) {
-
 			// テクスチャサイズ代入
 			texture.uv.x = (float)texture_info.Width;
 			texture.uv.y = (float)texture_info.Height;
 		}
-
 		return texture;
 	};
 	/*----テクスチャ読み込み----*/

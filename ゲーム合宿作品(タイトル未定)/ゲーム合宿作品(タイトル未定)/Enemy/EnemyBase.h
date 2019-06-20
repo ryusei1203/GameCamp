@@ -4,13 +4,10 @@
 
 // エネミー基底
 class EnemyBase : public ObjectBase {
-
 public:
 	// コンストラクタ
 	EnemyBase() {};
-
 	// デストラクタ
 	~EnemyBase() {};
-
 private:
 };

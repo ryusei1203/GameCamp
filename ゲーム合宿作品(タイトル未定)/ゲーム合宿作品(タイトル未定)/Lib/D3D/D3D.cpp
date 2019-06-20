@@ -3,16 +3,12 @@
 
 // D3D情報
 namespace D3D {
-
 	// IDirect3D9
 	LPDIRECT3D9 d3d9 = nullptr;
-
 	// IDirect3Dデバイス
 	LPDIRECT3DDEVICE9 dev = nullptr;
-
 	/*----D3D9初期化----*/
 	void Init() {
-
 		// PresentParameters設定
 		D3DPRESENT_PARAMETERS pp{};
 		{
@@ -45,15 +41,12 @@ namespace D3D {
 			// スワップエフェクトの書き換えタイミング
 			pp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
 		}
-
 		// LPDIRECT3D9初期化
 		d3d9 = Direct3DCreate9(D3D_SDK_VERSION);
-
 		// nullチェック
 		if (d3d9 == NULL) {
 			return;
 		}
-
 		// IDirect3DDevice作成
 		if (d3d9->CreateDevice(
 			// ディスプレイアダプタの種類
@@ -71,7 +64,6 @@ namespace D3D {
 		) != D3D_OK) {
 			return;
 		}
-
 		// ビューポート設定
 		RegisterViewPort(dev, pp);
 	}
@@ -79,7 +71,6 @@ namespace D3D {
 
 	/*----ViewPortの設定----*/
 	void RegisterViewPort(LPDIRECT3DDEVICE9 dev, D3DPRESENT_PARAMETERS pp) {
-
 		D3DVIEWPORT9 view_port;
 		// 描画開始位置(X座標)
 		view_port.X = 0;
@@ -93,7 +84,6 @@ namespace D3D {
 		view_port.MinZ = 0.0f;
 		// Z深度(最大)
 		view_port.MaxZ = 1.0f;
-
 		// ViewPort設定
 		if (FAILED(dev->SetViewport(&view_port))) {
 			return;
@@ -131,7 +121,6 @@ namespace D3D {
 	void DrawEnd() {
 		// シーン描画終了
 		dev->EndScene();
-
 		// バッファ転送
 		dev->Present(
 			// 転送元矩形

@@ -46,6 +46,9 @@
     <Filter Include="ObjectManager">
       <UniqueIdentifier>{527b6469-b4c0-4567-9f38-ede67e4996b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib\KeyInput">
+      <UniqueIdentifier>{00161008-662e-4ea3-bf23-1604ace63432}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main\main.cpp">
@@ -84,6 +87,9 @@
     <ClCompile Include="ObjectManager\ObjectManager.cpp">
       <Filter>ObjectManager</Filter>
     </ClCompile>
+    <ClCompile Include="Lib\KeyInput\KeyInput.cpp">
+      <Filter>Lib\KeyInput</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\D3D\D3D.h">
@@ -118,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="ObjectManager\ObjectManager.h">
       <Filter>ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\KeyInput\KeyInput.h">
+      <Filter>Lib\KeyInput</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

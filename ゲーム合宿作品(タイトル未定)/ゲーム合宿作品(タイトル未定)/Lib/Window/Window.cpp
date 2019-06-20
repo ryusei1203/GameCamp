@@ -1,10 +1,9 @@
 ﻿#include "Window.h"
 
+// ウィンドウ情報
 namespace Window {
-
 	// ウィンドウハンドル
 	HWND hwnd = nullptr;
-	
 	/*----ウィンドウプロシージャ----*/
 	LRESULT WINAPI WindowProc(
 		HWND hWnd,
@@ -17,11 +16,9 @@ namespace Window {
 		case WM_DESTROY:
 			PostQuitMessage(0);
 			return 0;
-
 		default:
 			return DefWindowProc(hWnd, msg, wParam, lParam);
 		}
-
 		return 0;
 	}
 	/*----ウィンドウプロシージャ----*/
@@ -30,13 +27,10 @@ namespace Window {
 	void Init() {
 		// インスタンスハンドル
 		HINSTANCE instance = GetModuleHandle(nullptr);
-
 		// ウィンドウクラス
 		WNDCLASSEX window_class{};
-
 		// ウィンドウ情報登録
 		RegisterWindowClass(window_class, instance);
-
 		// ウィンドウ生成
 		Create(instance);
 	}
@@ -44,31 +38,32 @@ namespace Window {
 
 	/*----ウィンドウ情報の登録----*/
 	void RegisterWindowClass(WNDCLASSEX window_class, HINSTANCE instance) {
-		// WNDCLASSEX構造体のサイズ
-		window_class.cbSize = sizeof(WNDCLASSEX);
-		// ウィンドウスタイル
-		window_class.style = CS_HREDRAW | CS_VREDRAW | CS_DBLCLKS;
-		// ウィンドウプロシージャのアドレス
-		window_class.lpfnWndProc = WindowProc;
-		// 予備メモリ
-		window_class.cbWndExtra = 0;
-		// ウィンドウオブジェクト生成時に確保されるメモリサイズ
-		window_class.cbClsExtra = 0;
-		// インスタンスハンドル
-		window_class.hInstance = instance;
-		// アプリのショートカットなどで使用されるアイコン
-		window_class.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-		// ウィンドウのクライアント上のマウスカーソル
-		window_class.hCursor = LoadCursor(NULL, IDI_APPLICATION);
-		// ウィンドウのクライアント領域の背景色
-		window_class.hbrBackground = (HBRUSH)GetStockObject(LTGRAY_BRUSH);
-		// メニュー名
-		window_class.lpszMenuName = MAKEINTRESOURCE(NULL);
-		// Windowクラス名
-		window_class.lpszClassName = TEXT("ゲーム合宿");
-		// タイトルバーで使用されるアイコン
-		window_class.hIconSm = NULL;
-
+		{
+			// WNDCLASSEX構造体のサイズ
+			window_class.cbSize = sizeof(WNDCLASSEX);
+			// ウィンドウスタイル
+			window_class.style = CS_HREDRAW | CS_VREDRAW | CS_DBLCLKS;
+			// ウィンドウプロシージャのアドレス
+			window_class.lpfnWndProc = WindowProc;
+			// 予備メモリ
+			window_class.cbWndExtra = 0;
+			// ウィンドウオブジェクト生成時に確保されるメモリサイズ
+			window_class.cbClsExtra = 0;
+			// インスタンスハンドル
+			window_class.hInstance = instance;
+			// アプリのショートカットなどで使用されるアイコン
+			window_class.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+			// ウィンドウのクライアント上のマウスカーソル
+			window_class.hCursor = LoadCursor(NULL, IDI_APPLICATION);
+			// ウィンドウのクライアント領域の背景色
+			window_class.hbrBackground = (HBRUSH)GetStockObject(LTGRAY_BRUSH);
+			// メニュー名
+			window_class.lpszMenuName = MAKEINTRESOURCE(NULL);
+			// Windowクラス名
+			window_class.lpszClassName = TEXT("ゲーム合宿");
+			// タイトルバーで使用されるアイコン
+			window_class.hIconSm = NULL;
+		}
 		// ウィンドウ情報登録
 		if (RegisterClassEx(&window_class) == NULL) {
 			return;
@@ -103,15 +98,12 @@ namespace Window {
 			// WM_CREATEメッセージのlpparamのCREATESTRUCT構造体のポインタ
 			NULL
 		);
-
 		// ウィンドウリサイズ
 		Resize(hwnd);
-
 		// nullチェック
 		if (hwnd == NULL) {
 			return;
 		}
-
 		// ウィンドウ表示
 		ShowWindow(hwnd, SW_SHOW);
 	}
@@ -119,22 +111,21 @@ namespace Window {
 
 	/*----ウィンドウリサイズ----*/
 	void Resize(HWND hwnd) {
-
+		// スクリーンサイズ
 		RECT window;
-		RECT client;
-
 		// スクリーン座標取得
 		GetWindowRect(hwnd, &window);
-		// クライアント座標取得
-		GetClientRect(hwnd, &client);
-
 		int window_size_x = (window.right - window.left);
 		int window_size_y = (window.bottom - window.top);
+		// クライアントサイズ
+		RECT client;
+		// クライアント座標取得
+		GetClientRect(hwnd, &client);
 		int client_size_x = (client.right - client.left);
 		int client_size_y = (client.bottom - client.top);
+		// ウィンドウサイズ設定
 		int frame_size_x = window_size_x - client_size_x;
 		int frame_size_y = window_size_y - client_size_y;
-
 		// ウィンドウサイズ再設定
 		SetWindowPos(
 			// ウィンドウハンドル
@@ -157,7 +148,6 @@ namespace Window {
 
 	/*----メッセージ処理----*/
 	bool ProcessMassage() {
-
 		MSG msg;
 		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
 

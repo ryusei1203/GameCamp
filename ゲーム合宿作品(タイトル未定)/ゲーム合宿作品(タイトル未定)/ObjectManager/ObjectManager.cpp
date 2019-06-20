@@ -13,7 +13,6 @@ ObjectManager::ObjectManager() {
 
 // デストラクタ
 ObjectManager::~ObjectManager() {
-
 	// エネミー
 	delete enemy;
 	enemy = nullptr;
@@ -22,17 +21,21 @@ ObjectManager::~ObjectManager() {
 	player = nullptr;
 }
 
-// 更新
+/*----更新----*/
 void ObjectManager::Update() {
-
+	// プレイヤー
+	player->Update();
+	// エネミー
+	enemy->Update();
 }
+/*----更新----*/
 
-// 描画
+/*----描画----*/
 void ObjectManager::Draw() {
-
 	// プレイヤー
 	player->Draw();
 	// エネミー
 	enemy->Draw();
 }
+/*----描画----*/
 
