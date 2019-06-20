@@ -51,82 +51,82 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main\main.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="Source\Enemy\Enemy.cpp">
+      <Filter>Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Lib\D3D\D3D.cpp">
+    <ClCompile Include="Source\Enemy\EnemyBase.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\D3D\D3D.cpp">
       <Filter>Lib\D3D</Filter>
     </ClCompile>
-    <ClCompile Include="Lib\Draw2D\Draw2D.cpp">
+    <ClCompile Include="Source\Lib\Draw2D\Draw2D.cpp">
       <Filter>Lib\Draw2D</Filter>
     </ClCompile>
-    <ClCompile Include="Lib\Texture\Texture.cpp">
+    <ClCompile Include="Source\Lib\KeyInput\KeyInput.cpp">
+      <Filter>Lib\KeyInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Texture\Texture.cpp">
       <Filter>Lib\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="Lib\Window\Window.cpp">
+    <ClCompile Include="Source\Lib\Window\Window.cpp">
       <Filter>Lib\WIndow</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\ResourceManager.cpp">
-      <Filter>ResourceManager</Filter>
+    <ClCompile Include="Source\Main\main.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy\EnemyBase.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Player\PlayerBase.cpp">
-      <Filter>Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Player\Player.cpp">
-      <Filter>Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy\Enemy.cpp">
-      <Filter>Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectBase\ObjectBase.cpp">
+    <ClCompile Include="Source\ObjectBase\ObjectBase.cpp">
       <Filter>ObjectBase</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectManager\ObjectManager.cpp">
+    <ClCompile Include="Source\ObjectManager\ObjectManager.cpp">
       <Filter>ObjectManager</Filter>
     </ClCompile>
-    <ClCompile Include="Lib\KeyInput\KeyInput.cpp">
-      <Filter>Lib\KeyInput</Filter>
+    <ClCompile Include="Source\Player\Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player\PlayerBase.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ResourceManager\ResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lib\D3D\D3D.h">
+    <ClInclude Include="Source\Enemy\Enemy.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Enemy\EnemyBase.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lib\D3D\D3D.h">
       <Filter>Lib\D3D</Filter>
     </ClInclude>
-    <ClInclude Include="Lib\Draw2D\Draw2D.h">
+    <ClInclude Include="Source\Lib\Draw2D\Draw2D.h">
       <Filter>Lib\Draw2D</Filter>
     </ClInclude>
-    <ClInclude Include="Lib\Texture\Texture.h">
+    <ClInclude Include="Source\Lib\KeyInput\KeyInput.h">
+      <Filter>Lib\KeyInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lib\Texture\Texture.h">
       <Filter>Lib\Texture</Filter>
     </ClInclude>
-    <ClInclude Include="Lib\Window\Window.h">
+    <ClInclude Include="Source\Lib\Window\Window.h">
       <Filter>Lib\WIndow</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\ResourceManager.h">
-      <Filter>ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy\EnemyBase.h">
-      <Filter>Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Player\PlayerBase.h">
-      <Filter>Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Player\Player.h">
-      <Filter>Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy\Enemy.h">
-      <Filter>Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectBase\ObjectBase.h">
+    <ClInclude Include="Source\ObjectBase\ObjectBase.h">
       <Filter>ObjectBase</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectManager\ObjectManager.h">
+    <ClInclude Include="Source\ObjectManager\ObjectManager.h">
       <Filter>ObjectManager</Filter>
     </ClInclude>
-    <ClInclude Include="Lib\KeyInput\KeyInput.h">
-      <Filter>Lib\KeyInput</Filter>
+    <ClInclude Include="Source\Player\Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player\PlayerBase.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ResourceManager\ResourceManager.h">
+      <Filter>ResourceManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
