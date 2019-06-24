@@ -7,8 +7,8 @@ namespace Window {
 	// ウィンドウハンドル
 	extern HWND hwnd;
 	// Windowサイズ
-	#define WINDOW_W (800)
-	#define WINDOW_H (600)
+	const float WINDOW_W = 800.f;
+	const float WINDOW_H = 600.f;
 	// ウィンドウ情報初期化
 	void Init();
 	// ウィンドウプロシージャ

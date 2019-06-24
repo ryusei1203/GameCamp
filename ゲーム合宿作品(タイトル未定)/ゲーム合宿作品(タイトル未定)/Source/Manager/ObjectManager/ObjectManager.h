@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "../../Object/ObjectBase/ObjectBase.h"
+#include "../../Base/ObjectBase/ObjectBase.h"
 
 // オブジェクト管理
 class ObjectManager {
@@ -19,3 +19,4 @@ private:
 	// エネミーインスタンス
 	ObjectBase *enemy;
 };
+

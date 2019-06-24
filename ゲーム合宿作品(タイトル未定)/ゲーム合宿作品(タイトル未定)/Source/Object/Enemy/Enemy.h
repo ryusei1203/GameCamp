@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../EnemyBase/EnemyBase.h"
+#include "../../Base/EnemyBase/EnemyBase.h"
 
 #include "Enemy.h"
 
@@ -8,7 +8,7 @@ class Enemy : public EnemyBase {
 public :
 	// コンストラクタ
 	Enemy() {
-		m_pos = { 64.f,64.f };
+		m_pos = { 32.f,32.f };
 	};
 private:
 	// デストラクタ
@@ -18,3 +18,4 @@ private:
 	// 描画
 	void Draw()override;
 };
+

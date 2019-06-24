@@ -82,13 +82,13 @@ namespace Window {
 			// ウィンドウスタイル
 			WS_OVERLAPPEDWINDOW,
 			// ウィンドウの表示位置(X軸)
-			(GetSystemMetrics(SM_CXSCREEN) / 2) - (WINDOW_W / 2),
+			(GetSystemMetrics(SM_CXSCREEN) / 2) - ((int)WINDOW_W / 2),
 			// ウィンドウの表示位置(Y軸)
-			(GetSystemMetrics(SM_CYSCREEN) / 2) - (WINDOW_H / 2),
+			(GetSystemMetrics(SM_CYSCREEN) / 2) - ((int)WINDOW_H / 2),
 			// ウィンドウの横幅
-			WINDOW_W,
+			(int)WINDOW_W,
 			// ウィンドウの縦幅
-			WINDOW_H,
+			(int)WINDOW_H,
 			// 親のウィンドウハンドル
 			NULL,
 			// メニューハンドル
@@ -137,9 +137,9 @@ namespace Window {
 			// ウィンドウ表示位置(Y座標)
 			CW_USEDEFAULT,
 			// ウィンドウ幅(横)
-			frame_size_x + WINDOW_W,
+			frame_size_x + (int)WINDOW_W,
 			// ウィンドウ幅(縦)
-			frame_size_y + WINDOW_H,
+			frame_size_y + (int)WINDOW_H,
 			// ウィンドウサイズ、位置の変更に関するフラグ
 			SWP_NOMOVE
 		);

@@ -1,6 +1,7 @@
 ﻿#include "Enemy.h"
-#include "../../Lib/Draw2D/Draw2D.h"
 #include "../../Manager/ResourceManager/ResourceManager.h"
+
+#include "../../Lib/Draw2D/Draw2D.h"
 
 /*----private----*/
 /*----更新----*/

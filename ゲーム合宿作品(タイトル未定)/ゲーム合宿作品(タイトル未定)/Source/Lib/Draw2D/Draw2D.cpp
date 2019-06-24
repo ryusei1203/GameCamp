@@ -5,7 +5,7 @@ namespace Draw2D {
 	/*----四角形描画----*/
 	/*
 		第一引数 テクスチャID(ResourceManagerに記載)
-		第二引数 座標(D3DXVECTOR2)
+		第二引数 座標(D3DXVECTOR2)(中心座標)
 	*/
 	void Box(ResourceManager::TextureID texture_id, D3DXVECTOR2 pos) {
 		// TextureDataを取得
@@ -19,20 +19,24 @@ namespace Draw2D {
 		);
 		// 頂点バッファがどの頂点情報を指しているか
 		D3D::dev->SetFVF(FVF_2D);
+		// テクスチャ座標の半分
+		D3DXVECTOR2 half_texture_uv{ (texture.uv.x / 2) ,(texture.uv.y / 2) };
+		// 中心頂点
+		D3DXVECTOR2 center_pos = pos;
 		// 左上頂点
-		D3DXVECTOR2 pos1 = pos;
+		D3DXVECTOR2 upper_left_pos{ center_pos.x - half_texture_uv.x , center_pos.y - half_texture_uv.y };
 		// 右下頂点
-		D3DXVECTOR2 pos2 = { pos.x + texture.uv.x , pos.y + texture.uv.y };
+		D3DXVECTOR2 lower_right_pos{ center_pos.x + half_texture_uv.x , center_pos.y + half_texture_uv.y };
 		// 四角形の頂点
 		CustomVetrex vertex[4] = {
 			// 左上頂点 
-			{{pos1.x, pos1.y, 0.f}, 1.f, 0xffffff, {0.f, 0.f} },
+			{{upper_left_pos.x, upper_left_pos.y, 0.f}, 1.f, 0xffffff, {0.f, 0.f} },
 			// 右上頂点
-			{{pos2.x, pos1.y, 0.f}, 1.f, 0xffffff, {0.f, 1.f} },
+			{{lower_right_pos.x, upper_left_pos.y, 0.f}, 1.f, 0xffffff, {0.f, 1.f} },
 			// 右下頂点
-			{{pos2.x, pos2.y, 0.f}, 1.f, 0xffffff, {1.f, 0.f} },
+			{{lower_right_pos.x, lower_right_pos.y, 0.f}, 1.f, 0xffffff, {1.f, 0.f} },
 			// 左下頂点
-			{{pos1.x, pos2.y, 0.f}, 1.f, 0xffffff, {1.f, 1.f} },
+			{{upper_left_pos.x, lower_right_pos.y, 0.f}, 1.f, 0xffffff, {1.f, 1.f} },
 		};
 		// 頂点の結び方とポリゴンの描画枚数の指定
 		D3D::dev->DrawPrimitiveUP(
@@ -48,3 +52,4 @@ namespace Draw2D {
 	}
 	/*----四角形描画----*/
 }
+

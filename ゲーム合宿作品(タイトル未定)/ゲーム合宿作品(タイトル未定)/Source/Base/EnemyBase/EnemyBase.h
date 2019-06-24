@@ -11,3 +11,4 @@ public:
 	~EnemyBase() {};
 private:
 };
+

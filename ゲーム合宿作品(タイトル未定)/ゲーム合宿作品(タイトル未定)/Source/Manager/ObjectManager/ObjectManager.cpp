@@ -5,7 +5,6 @@
 /*----public----*/
 /*----コンストラクタ----*/
 ObjectManager::ObjectManager() {
-
 	// プレイヤー
 	player = new Player();
 	// エネミー

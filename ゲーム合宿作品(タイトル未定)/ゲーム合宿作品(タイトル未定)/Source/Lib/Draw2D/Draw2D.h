@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "../Texture/Texture.h"
-#include "../../ResourceManager/ResourceManager.h"
+#include "../../../Source/Manager/ResourceManager/ResourceManager.h"
 
 // 2D描画情報
 namespace Draw2D {
