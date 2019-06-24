@@ -31,15 +31,6 @@
     <Filter Include="Object\Player">
       <UniqueIdentifier>{f7e7754f-bf7f-4c40-9fc4-3cf12c55bd7a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\ObjectBase">
-      <UniqueIdentifier>{168f88c3-83ad-4b1d-9086-ef50fcdbbc2d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\EnemyBase">
-      <UniqueIdentifier>{a48ec274-e71b-4239-af1b-79be4bd21412}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\PlayerBase">
-      <UniqueIdentifier>{98cbe815-0b48-464b-baf0-db68dc3d1c29}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\Bullet">
       <UniqueIdentifier>{895b709a-b2d4-44a8-b3e2-cfcb17d29418}</UniqueIdentifier>
     </Filter>
@@ -52,8 +43,26 @@
     <Filter Include="Manager\ResourceManager">
       <UniqueIdentifier>{513f10c1-3fe2-4939-b7d6-411e99358345}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\BulletBase">
+    <Filter Include="Base">
+      <UniqueIdentifier>{ebb555d1-90d0-4b72-937c-98fbb70a11dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\BulletBase">
       <UniqueIdentifier>{fa0ef8e8-2507-4ee8-81d5-45b6320bd234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\EnemyBase">
+      <UniqueIdentifier>{a48ec274-e71b-4239-af1b-79be4bd21412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\ObjectBase">
+      <UniqueIdentifier>{168f88c3-83ad-4b1d-9086-ef50fcdbbc2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\PlayerBase">
+      <UniqueIdentifier>{98cbe815-0b48-464b-baf0-db68dc3d1c29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\Collision">
+      <UniqueIdentifier>{e6810bf4-e7e6-4123-814e-698b08de5cd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\Calc">
+      <UniqueIdentifier>{0a75802c-7cbf-4257-beb9-b33e36094aa5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,17 +84,11 @@
     <ClCompile Include="Source\Main\main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\ObjectBase\ObjectBase.cpp">
-      <Filter>Object\ObjectBase</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Object\Player\Player.cpp">
       <Filter>Object\Player</Filter>
     </ClCompile>
     <ClCompile Include="Source\Object\Enemy\Enemy.cpp">
       <Filter>Object\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Object\EnemyBase\EnemyBase.cpp">
-      <Filter>Object\EnemyBase</Filter>
     </ClCompile>
     <ClCompile Include="Source\Manager\ObjectManager\ObjectManager.cpp">
       <Filter>Manager\ObjectManager</Filter>
@@ -96,11 +99,23 @@
     <ClCompile Include="Source\Object\Bullet\Bullet.cpp">
       <Filter>Object\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\BulletBase\Bulletbase.cpp">
-      <Filter>Object\BulletBase</Filter>
+    <ClCompile Include="Source\Base\BulletBase\Bulletbase.cpp">
+      <Filter>Base\BulletBase</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Object\PlayerBase\PlayerBase.cpp">
-      <Filter>Object\PlayerBase</Filter>
+    <ClCompile Include="Source\Base\EnemyBase\EnemyBase.cpp">
+      <Filter>Base\EnemyBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Base\ObjectBase\ObjectBase.cpp">
+      <Filter>Base\ObjectBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Base\PlayerBase\PlayerBase.cpp">
+      <Filter>Base\PlayerBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Collision\Collision.cpp">
+      <Filter>Lib\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Calc.cpp">
+      <Filter>Lib\Calc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,17 +134,11 @@
     <ClInclude Include="Source\Lib\Window\Window.h">
       <Filter>Lib\WIndow</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Object\ObjectBase\ObjectBase.h">
-      <Filter>Object\ObjectBase</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Object\Player\Player.h">
       <Filter>Object\Player</Filter>
     </ClInclude>
     <ClInclude Include="Source\Object\Enemy\Enemy.h">
       <Filter>Object\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Object\EnemyBase\EnemyBase.h">
-      <Filter>Object\EnemyBase</Filter>
     </ClInclude>
     <ClInclude Include="Source\Manager\ObjectManager\ObjectManager.h">
       <Filter>Manager\ObjectManager</Filter>
@@ -140,11 +149,23 @@
     <ClInclude Include="Source\Object\Bullet\Bullet.h">
       <Filter>Object\Bullet</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Object\BulletBase\BulletBase.h">
-      <Filter>Object\BulletBase</Filter>
+    <ClInclude Include="Source\Base\BulletBase\BulletBase.h">
+      <Filter>Base\BulletBase</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Object\PlayerBase\PlayerBase.h">
-      <Filter>Object\PlayerBase</Filter>
+    <ClInclude Include="Source\Base\EnemyBase\EnemyBase.h">
+      <Filter>Base\EnemyBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Base\PlayerBase\PlayerBase.h">
+      <Filter>Base\PlayerBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lib\Collision\Collision.h">
+      <Filter>Lib\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Calc.h">
+      <Filter>Lib\Calc</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Base\ObjectBase\ObjectBase.h">
+      <Filter>Base\ObjectBase</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

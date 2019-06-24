@@ -122,15 +122,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calc.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Source\Lib\Collision\Collision.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Source\Object\Bullet\Bullet.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Source\Object\BulletBase\Bulletbase.cpp">
+    <ClCompile Include="Source\Base\BulletBase\Bulletbase.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Source\Object\EnemyBase\EnemyBase.cpp">
+    <ClCompile Include="Source\Base\EnemyBase\EnemyBase.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -158,7 +166,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Source\Object\ObjectBase\ObjectBase.cpp">
+    <ClCompile Include="Source\Base\ObjectBase\ObjectBase.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -174,7 +182,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Source\Object\PlayerBase\PlayerBase.cpp">
+    <ClCompile Include="Source\Base\PlayerBase\PlayerBase.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -184,15 +192,23 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calc.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Source\Lib\Collision\Collision.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Source\Object\Bullet\Bullet.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Source\Object\BulletBase\BulletBase.h">
+    <ClInclude Include="Source\Base\BulletBase\BulletBase.h">
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Source\Object\EnemyBase\EnemyBase.h">
+    <ClInclude Include="Source\Base\EnemyBase\EnemyBase.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -216,7 +232,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Source\Object\ObjectBase\ObjectBase.h">
+    <ClInclude Include="Source\Base\ObjectBase\ObjectBase.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -232,7 +248,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Source\Object\PlayerBase\PlayerBase.h">
+    <ClInclude Include="Source\Base\PlayerBase\PlayerBase.h">
       <SubType>
       </SubType>
     </ClInclude>
