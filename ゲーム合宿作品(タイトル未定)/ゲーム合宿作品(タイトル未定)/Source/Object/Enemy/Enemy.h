@@ -8,6 +8,7 @@ class Enemy : public EnemyBase {
 public :
 	// コンストラクタ
 	Enemy() {
+		// 座標(初期化)
 		m_pos = { 32.f,32.f };
 	};
 private:
