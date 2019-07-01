@@ -8,7 +8,7 @@
 class Player : public PlayerBase {
 public:
 	// コンストラクタ
-	Player() {};
+	Player() : bg_pos(0.f, 0.f) {};
 private:
 	/*----関数----*/
 	// 更新
@@ -23,5 +23,6 @@ private:
 	// バレット実体化
 	std::vector<ObjectBase*> bullet_list;
 	/*----配列----*/
+	D3DXVECTOR2 bg_pos;
 };
 

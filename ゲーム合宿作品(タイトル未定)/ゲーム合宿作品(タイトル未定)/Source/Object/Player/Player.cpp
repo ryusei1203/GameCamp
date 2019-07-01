@@ -1,5 +1,4 @@
 ﻿#include "Player.h"
-#include "../../Manager/ResourceManager/ResourceManager.h"
 #include "../Bullet/Bullet.h"
 
 #include "../../Lib/Draw2D/Draw2D.h"
@@ -22,11 +21,13 @@ void Player::Update() {
 			bullet->Update();
 		}
 	}
+	bg_pos.y -= 1.f;
 }
 /*----更新----*/
 
 /*----描画----*/
 void Player::Draw() {
+	Draw2D::UpperLeftOriginBox(ResourceManager::TEST4_ID, bg_pos);
 	// 弾描画
 	for (auto bullet : bullet_list) {
 		if (bullet != nullptr) {
@@ -34,7 +35,7 @@ void Player::Draw() {
 		}
 	}
 	// テスト描画
-	Draw2D::Box(ResourceManager::TEST1_ID, m_pos);
+	Draw2D::CenterOriginBox(ResourceManager::TEST1_ID, m_pos);
 }
 /*----描画----*/
 /*----private----*/

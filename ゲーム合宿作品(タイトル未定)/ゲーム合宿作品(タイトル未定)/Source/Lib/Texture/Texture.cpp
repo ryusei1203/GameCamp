@@ -4,39 +4,46 @@
 
 // テクスチャ情報
 namespace Texture {
-	TextureData texture;
+	TextureData texture_data;
 	/*----テクスチャ読み込み----*/
 	TextureData Load(char *file_name) {
 		// テクスチャファイル読み込み
-		if (D3DXCreateTextureFromFileA(
+		if (D3DXCreateTextureFromFile(
 			// 読み込みで使用するデバイス
 			D3D::dev,
 			// ファイル名
 			file_name,
 			// 読み込まれたテクスチャの保存先
-			&texture.texture
-		) != D3D_OK) {
-
-
-			// ここ何とかしたい
-
-
+			&texture_data.texture
+		) == D3D_OK) {
+			// テクスチャサイズ取得
+			D3DXIMAGE_INFO texture_info;
+			if (D3DXGetImageInfoFromFile(
+				// ファイル名
+				file_name,
+				// テクスチャサイズ保存先
+				&texture_info
+			) == D3D_OK) {
+				// テクスチャサイズ代入
+				texture_data.uv.x = (float)texture_info.Width;
+				texture_data.uv.y = (float)texture_info.Height;
+			}
+			//// テクスチャサイズ取得
+			//D3DSURFACE_DESC desc;
+			//if (texture_data.texture->GetLevelDesc(0, &desc) == D3D_OK) {
+			//	// テクスチャサイズ代入
+			//	texture_data.uv.x = (float)desc.Width;
+			//	texture_data.uv.y = (float)desc.Height;
+			//}
+			// テクスチャデータを返す
+			return texture_data;
 		}
-		// テクスチャサイズ取得用
-		D3DXIMAGE_INFO texture_info;
-		// テクスチャサイズ取得
-		if (D3DXGetImageInfoFromFileA(file_name, &texture_info) == D3D_OK) {
-			// テクスチャサイズ代入
-			texture.uv.x = (float)texture_info.Width;
-			texture.uv.y = (float)texture_info.Height;
-		}
-		return texture;
 	};
 	/*----テクスチャ読み込み----*/
 
 	/*----テクスチャ開放----*/
 	void Release() {
-		texture.texture->Release();
+		texture_data.texture->Release();
 	}
 	/*----テクスチャ開放----*/
 }

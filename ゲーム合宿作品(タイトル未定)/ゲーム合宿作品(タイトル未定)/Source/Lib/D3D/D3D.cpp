@@ -64,33 +64,9 @@ namespace D3D {
 		) != D3D_OK) {
 			return;
 		}
-		// ビューポート設定
-		RegisterViewPort(dev, pp);
 	}
 	/*----D3D9初期化----*/
-
-	/*----ViewPortの設定----*/
-	void RegisterViewPort(LPDIRECT3DDEVICE9 dev, D3DPRESENT_PARAMETERS pp) {
-		D3DVIEWPORT9 view_port;
-		// 描画開始位置(X座標)
-		view_port.X = 0;
-		// 描画開始位置(Y座標)
-		view_port.Y = 0;
-		// 描画範囲(幅)
-		view_port.Width = pp.BackBufferWidth;
-		// 描画範囲(高さ)
-		view_port.Height = pp.BackBufferHeight;
-		// Z深度(最小)
-		view_port.MinZ = 0.0f;
-		// Z深度(最大)
-		view_port.MaxZ = 1.0f;
-		// ViewPort設定
-		if (FAILED(dev->SetViewport(&view_port))) {
-			return;
-		}
-	}
-	/*----ViewPortの設定----*/
-
+	
 	/*----描画開始----*/
 	void DrawStart() {
 		// シーンクリア

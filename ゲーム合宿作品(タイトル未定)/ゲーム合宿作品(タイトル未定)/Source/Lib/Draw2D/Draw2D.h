@@ -7,16 +7,17 @@
 namespace Draw2D {
 	// 頂点情報
 	struct CustomVetrex {
-		// 頂点情報
-		D3DXVECTOR3 pos;
-		// 除算数
-		float rhw;
+		// 頂点情報+除算数
+		D3DXVECTOR4 pos;
 		// 色
 		DWORD dw_color;
 		// テクスチャ座標
 		D3DXVECTOR2 uv;
 	};
-	// 四角形描画
-	void Box(ResourceManager::TextureID texture_id, D3DXVECTOR2 pos);
+	// 四角形
+		// 四角形描画(中心原点)
+	void CenterOriginBox(ResourceManager::TextureID texture_id, D3DXVECTOR2 pos);
+	// 四角形描画(左上原点)
+	void UpperLeftOriginBox(ResourceManager::TextureID texture_id, D3DXVECTOR2 pos);
 }
 

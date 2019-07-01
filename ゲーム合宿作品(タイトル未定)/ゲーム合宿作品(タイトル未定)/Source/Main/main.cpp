@@ -1,9 +1,9 @@
-﻿#include "../Lib/Window/Window.h"
+﻿#include "../../Source/Manager/ResourceManager/ResourceManager.h"
+#include "../../Source/Manager/ObjectManager/ObjectManager.h"
+
+#include "../Lib/Window/Window.h"
 #include "../Lib/D3D/D3D.h"
 #include "../Lib/KeyInput/KeyInput.h"
-
-#include "../../Source/Manager/ResourceManager/ResourceManager.h"
-#include "../../Source/Manager/ObjectManager/ObjectManager.h"
 
 // メイン関数
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {

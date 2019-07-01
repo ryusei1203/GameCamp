@@ -21,7 +21,7 @@ void Bullet::Update() {
 /*----描画----*/
 void Bullet::Draw() {
 	// テスト描画
-	Draw2D::Box(ResourceManager::TEST3_ID, m_pos);
+	Draw2D::CenterOriginBox(ResourceManager::TEST3_ID, m_pos);
 }
 /*----描画----*/
 /*----private----*/
