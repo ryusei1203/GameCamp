@@ -8,11 +8,13 @@
 class Player : public PlayerBase {
 public:
 	// コンストラクタ
-	Player() : bg_pos(0.f, 0.f) {};
+	Player() {};
 private:
 	/*----関数----*/
 	// 更新
 	void Update()override;
+	// 移動
+	void Move();
 	// 描画
 	void Draw()override;
 	// デストラクタ
@@ -23,6 +25,5 @@ private:
 	// バレット実体化
 	std::vector<ObjectBase*> bullet_list;
 	/*----配列----*/
-	D3DXVECTOR2 bg_pos;
 };
 

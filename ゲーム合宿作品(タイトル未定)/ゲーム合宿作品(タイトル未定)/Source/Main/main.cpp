@@ -19,10 +19,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 	ObjectManager object;
 	// メインループ
 	while (Window::ProcessMassage()) {
-		// キー情報更新
-		KeyInput::Update();
 		// オブジェクト更新
 		object.Update();
+		// キー情報更新
+		KeyInput::Update();
 		// 描画開始
 		D3D::DrawStart();
 		// オブジェクト描画

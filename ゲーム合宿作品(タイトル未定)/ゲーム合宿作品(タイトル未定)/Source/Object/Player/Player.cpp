@@ -7,10 +7,8 @@
 /*----private----*/
 /*----更新----*/
 void Player::Update() {
-	// 右に移動
-	if (KeyInput::GetKey(RIGHT_KEY) == true) {
-		m_pos.x += m_speed;
-	}
+	// 移動
+	Move();
 	// 弾発射
 	if (KeyInput::GetKeyDown(SPACE_KEY) == true) {
 		bullet_list.push_back(new Bullet(m_pos));
@@ -21,13 +19,32 @@ void Player::Update() {
 			bullet->Update();
 		}
 	}
-	bg_pos.y -= 1.f;
 }
 /*----更新----*/
 
+/*----移動----*/
+void Player::Move() {
+	// 右に移動
+	if (KeyInput::GetKey(RIGHT_KEY) == true) {
+		m_pos.x += m_speed;
+	}
+	// 左に移動
+	if (KeyInput::GetKey(LEFT_KEY) == true) {
+		m_pos.x -= m_speed;
+	}
+	// 上に移動
+	if (KeyInput::GetKey(UP_KEY) == true) {
+		m_pos.y -= m_speed;
+	}
+	// 下に移動
+	if (KeyInput::GetKey(DOWN_KEY) == true) {
+		m_pos.y += m_speed;
+	}
+}
+/*----移動----*/
+
 /*----描画----*/
 void Player::Draw() {
-	Draw2D::UpperLeftOriginBox(ResourceManager::TEST4_ID, bg_pos);
 	// 弾描画
 	for (auto bullet : bullet_list) {
 		if (bullet != nullptr) {

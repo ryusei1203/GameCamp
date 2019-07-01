@@ -8,22 +8,22 @@
 #pragma comment(lib,"dinput8.lib")
 #pragma comment(lib,"dxguid.lib")
 
-/*----キー情報 GetKeyシリーズで使用----*/
+/*----キー情報 GetKeyシリーズで使用(16進数)----*/
 // キークリア用
 #define CREAR_KEY	(0x0000)
 // 上キー
-#define UP_KEY		(0x0002)
+#define UP_KEY		(0x0001)
 // 下キー
-#define DOWN_KEY	(0x0004)
+#define DOWN_KEY	(0x0002)
 // 左キー
-#define LEFT_KEY	(0x0006)
+#define LEFT_KEY	(0x0004)
 // 右キー
 #define RIGHT_KEY	(0x0008)
 // リターンキー
 #define RETURN_KEY	(0x0010)
 // スペースキー
-#define SPACE_KEY	(0x0012)
-/*----キー情報 GetKeyシリーズで使用----*/
+#define SPACE_KEY	(0x0020)
+/*----キー情報 GetKeyシリーズで使用(16進数)----*/
 
 // キー入力情報
 namespace KeyInput {

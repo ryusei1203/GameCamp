@@ -14,6 +14,8 @@ public :
 	// デストラクタ
 	~ObjectManager();
 private:
+	// 背景座標
+	D3DXVECTOR2 back_ground_pos;
 	// プレイヤーインスタンス
 	ObjectBase *player;
 	// エネミーインスタンス
