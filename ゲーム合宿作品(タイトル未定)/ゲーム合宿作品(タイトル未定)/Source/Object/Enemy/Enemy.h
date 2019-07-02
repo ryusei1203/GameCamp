@@ -10,7 +10,7 @@ public :
 	// コンストラクタ
 	Enemy() {
 		// 座標(初期化)
-		m_pos = { Window::WINDOW_W / 2,16.f };
+		m_info.pos = { Window::WINDOW_W / 2,16.f };
 	};
 private:
 	// デストラクタ

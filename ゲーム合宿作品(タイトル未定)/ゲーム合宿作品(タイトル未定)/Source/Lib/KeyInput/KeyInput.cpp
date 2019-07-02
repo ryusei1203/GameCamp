@@ -107,13 +107,13 @@ namespace KeyInput {
 				if (KeyState[DIK_RIGHT] & 0x80) {
 					input_state.now |= RIGHT_KEY;
 				}
-				// リターンキー
-				if (KeyState[DIK_RETURN] & 0x80) {
-					input_state.now |= RETURN_KEY;
-				}
 				// スペースキー
 				if (KeyState[DIK_SPACE] & 0x80) {
 					input_state.now |= SPACE_KEY;
+				}
+				// エスケープキー
+				if (KeyState[DIK_ESCAPE] & 0x80) {
+					input_state.now |= ESCAPE_KEY;
 				}
 			}
 			// トリガー情報取得

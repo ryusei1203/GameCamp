@@ -6,8 +6,8 @@
 
 /*----public----*/
 /*----コンストラクタ----*/
-ObjectManager::ObjectManager() : 
-	back_ground_pos({0.f,-2400.f+600.f}) {
+ObjectManager::ObjectManager() :
+	back_ground_pos({ 0.f,-2400.f + 600.f }) {
 	// プレイヤー
 	player = new Player();
 	// エネミー

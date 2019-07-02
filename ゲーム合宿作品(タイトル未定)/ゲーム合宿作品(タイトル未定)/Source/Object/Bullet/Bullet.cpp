@@ -5,7 +5,7 @@
 /*----public----*/
 /*----コンストラクタ----*/
 Bullet::Bullet(D3DXVECTOR2 object_pos) {
-	m_pos = object_pos;
+	m_info.pos = object_pos;
 }
 /*----コンストラクタ----*/
 /*----public----*/
@@ -14,14 +14,14 @@ Bullet::Bullet(D3DXVECTOR2 object_pos) {
 /*-----更新----*/
 void Bullet::Update() {
 	// 弾発射
-	m_pos.y -= m_speed;
+	m_info.pos.y -= m_info.speed;
 }
 /*-----更新----*/
 
 /*----描画----*/
 void Bullet::Draw() {
 	// テスト描画
-	Draw2D::CenterOriginBox(ResourceManager::TEST3_ID, m_pos);
+	Draw2D::CenterOriginBox(ResourceManager::TEST3_ID, m_info.pos);
 }
 /*----描画----*/
 /*----private----*/

@@ -1,6 +1,9 @@
 ﻿#pragma once
 
-#include "../../Base/ObjectBase/ObjectBase.h"
+#include "../../Base/PlayerBase/PlayerBase.h"
+#include "../../Base/EnemyBase/EnemyBase.h"
+
+#include "../../Lib/Collision/Collision.h"
 
 // オブジェクト管理
 class ObjectManager {
@@ -17,8 +20,10 @@ private:
 	// 背景座標
 	D3DXVECTOR2 back_ground_pos;
 	// プレイヤーインスタンス
-	ObjectBase *player;
+	PlayerBase *player;
 	// エネミーインスタンス
-	ObjectBase *enemy;
+	EnemyBase *enemy;
+	// 当たり判定インスタンス
+	Collision *collision;
 };
 

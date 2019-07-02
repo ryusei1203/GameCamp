@@ -12,7 +12,7 @@ void Enemy::Update() {
 /*----描画----*/
 void Enemy::Draw() {
 	// テスト描画
-	Draw2D::CenterOriginBox(ResourceManager::TEST2_ID, m_pos);
+	Draw2D::CenterOriginBox(ResourceManager::TEST2_ID, m_info.pos);
 }
 /*----描画----*/
 /*----private----*/

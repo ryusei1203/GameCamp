@@ -8,7 +8,7 @@ public:
 	// コンストラクタ
 	BulletBase() {
 		// 速さ(初期化)
-		m_speed = 10.f;
+		m_info.speed = 10.f;
 	};
 	// デストラクタ
 	~BulletBase() {};

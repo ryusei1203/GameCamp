@@ -2,36 +2,27 @@
 
 #include "../../Base/PlayerBase/PlayerBase.h"
 
-#include "../../Lib/Collision/Collision.h"
-
 #include <vector>
 
 // プレイヤー
 class Player : public PlayerBase {
 public:
 	// コンストラクタ
-	Player() {
-		collision = new Collision();
-	};
+	Player() {};
 private:
-	/*----関数----*/
+	/*----更新関数----*/
 	// 更新
 	void Update()override;
 	// 移動
 	void Move();
+	// 壁との当たり判定
+	void CollisionWall();
+	/*----更新関数----*/
+private:
 	// 描画
 	void Draw()override;
-	// デストラクタ
-	~Player() {
-		delete collision;
-		collision = nullptr;
-	};
-	/*----関数----*/
 private:
-	/*----配列----*/
-	// バレット実体化
-	std::vector<ObjectBase*> bullet_list;
-	/*----配列----*/
-	Collision *collision;
+	// デストラクタ
+	~Player() {};
 };
 

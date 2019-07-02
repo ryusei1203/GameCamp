@@ -64,6 +64,9 @@
     <Filter Include="Lib\Calc">
       <UniqueIdentifier>{0a75802c-7cbf-4257-beb9-b33e36094aa5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameData">
+      <UniqueIdentifier>{bf15d1e2-74fc-4021-8827-c7eef5ec2a99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Lib\D3D\D3D.cpp">
@@ -117,6 +120,9 @@
     <ClCompile Include="Calc.cpp">
       <Filter>Lib\Calc</Filter>
     </ClCompile>
+    <ClCompile Include="GameData.cpp">
+      <Filter>GameData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Lib\D3D\D3D.h">
@@ -166,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="Source\Base\ObjectBase\ObjectBase.h">
       <Filter>Base\ObjectBase</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>GameData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

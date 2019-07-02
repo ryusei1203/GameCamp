@@ -23,6 +23,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 		object.Update();
 		// キー情報更新
 		KeyInput::Update();
+		// 終了処理(エスケープキーで終了)
+		if (KeyInput::GetKeyDown(ESCAPE_KEY)) {
+			break;
+		}
 		// 描画開始
 		D3D::DrawStart();
 		// オブジェクト描画

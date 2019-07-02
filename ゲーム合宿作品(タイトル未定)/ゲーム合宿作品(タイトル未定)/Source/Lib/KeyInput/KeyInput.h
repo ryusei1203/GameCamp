@@ -19,10 +19,10 @@
 #define LEFT_KEY	(0x0004)
 // 右キー
 #define RIGHT_KEY	(0x0008)
-// リターンキー
-#define RETURN_KEY	(0x0010)
 // スペースキー
-#define SPACE_KEY	(0x0020)
+#define SPACE_KEY	(0x0010)
+// エスケープキー
+#define ESCAPE_KEY	(0x0020)
 /*----キー情報 GetKeyシリーズで使用(16進数)----*/
 
 // キー入力情報
