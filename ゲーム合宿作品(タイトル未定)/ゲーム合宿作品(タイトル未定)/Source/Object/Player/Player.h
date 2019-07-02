@@ -2,13 +2,17 @@
 
 #include "../../Base/PlayerBase/PlayerBase.h"
 
+#include "../../Lib/Collision/Collision.h"
+
 #include <vector>
 
 // プレイヤー
 class Player : public PlayerBase {
 public:
 	// コンストラクタ
-	Player() {};
+	Player() {
+		collision = new Collision();
+	};
 private:
 	/*----関数----*/
 	// 更新
@@ -18,12 +22,16 @@ private:
 	// 描画
 	void Draw()override;
 	// デストラクタ
-	~Player() {};
+	~Player() {
+		delete collision;
+		collision = nullptr;
+	};
 	/*----関数----*/
 private:
 	/*----配列----*/
 	// バレット実体化
 	std::vector<ObjectBase*> bullet_list;
 	/*----配列----*/
+	Collision *collision;
 };
 

@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include "../../Base/EnemyBase/EnemyBase.h"
-
 #include "Enemy.h"
+
+#include "../../Lib/Window/Window.h"
 
 // エネミー
 class Enemy : public EnemyBase {
@@ -9,7 +10,7 @@ public :
 	// コンストラクタ
 	Enemy() {
 		// 座標(初期化)
-		m_pos = { 16.f,16.f };
+		m_pos = { Window::WINDOW_W / 2,16.f };
 	};
 private:
 	// デストラクタ
