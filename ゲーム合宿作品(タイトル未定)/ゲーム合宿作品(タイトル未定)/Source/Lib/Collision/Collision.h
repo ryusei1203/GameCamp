@@ -9,14 +9,53 @@ public :
 	Collision() {};
 	// デストラクタ
 	~Collision() {};
-	/*----物体同士の当たり判定(中心原点)----*/
-
-	// いい名前ありますかね
-
-	// 右、下方向の当たり判定
-	bool IsHitBottomRight(float pos1, float pos2, float half_texture_uv1 = 0, float half_texture_uv2 = 0);
-	// 左、上方向の当たり判定
-	bool IsHitTopLeft(float pos1, float pos2, float half_texture_uv1 = 0, float half_texture_uv2 = 0);
-	/*----物体同士の当たり判定(中心原点)----*/
+	// 右辺当たり判定
+	/*
+		第一引数 : オブジェクトの右上座標
+		第二引数 : オブジェクトの右下座標
+		第三引数 : 当たり判定を取りたいオブジェクトの左上座標
+		第四引数 : 当たり判定を取りたいオブジェクトの左下座標
+	*/
+	bool IsHitRirghtSide(
+		D3DXVECTOR2 top_right_pos1, 
+		D3DXVECTOR2 bottom_right_pos1, 
+		D3DXVECTOR2 top_left_pos2, 
+		D3DXVECTOR2 bottom_left_pos2);
+	// 左辺当たり判定
+	/*
+		第一引数 : オブジェクトの左上座標
+		第二引数 : オブジェクトの左下座標
+		第三引数 : 当たり判定を取りたいオブジェクトの右上座標
+		第四引数 : 当たり判定を取りたいオブジェクトの右下座標
+	*/
+	bool IsHitLeftSide(
+		D3DXVECTOR2 top_left_pos1, 
+		D3DXVECTOR2 bottom_left_pos1, 
+		D3DXVECTOR2 top_right_pos2, 
+		D3DXVECTOR2 bottom_right_pos2);
+	// 上辺当たり判定
+	/*
+		第一引数 : オブジェクトの左上座標
+		第二引数 : オブジェクトの右上座標
+		第三引数 : 当たり判定を取りたいオブジェクトの左下座標
+		第四引数 : 当たり判定を取りたいオブジェクトの右下座標
+	*/
+	bool IsHitTopSide(
+		D3DXVECTOR2 top_left_pos1, 
+		D3DXVECTOR2 top_right_pos1,
+		D3DXVECTOR2 bottom_left_pos2, 
+		D3DXVECTOR2 bottom_right_pos2);
+	// 下辺当たり判定
+	/*
+		第一引数 : オブジェクトの左下座標
+		第二引数 : オブジェクトの右下座標
+		第三引数 : 当たり判定を取りたいオブジェクトの左上座標
+		第四引数 : 当たり判定を取りたいオブジェクトの右上座標
+	*/
+	bool IsHitBottomSide(
+		D3DXVECTOR2 bottom_left_pos1, 
+		D3DXVECTOR2 bottom_right_pos1,
+		D3DXVECTOR2 top_left_pos2, 
+		D3DXVECTOR2 top_right_pos2);
 };
 

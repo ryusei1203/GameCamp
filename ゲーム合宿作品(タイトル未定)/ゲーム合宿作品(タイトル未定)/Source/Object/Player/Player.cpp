@@ -9,6 +9,11 @@
 void Player::Update() {
 	// 移動
 	Move();
+	// 当たり判定用座標の更新
+	m_collision_info.pos[TOP_RIGHT_VERTEX] = { m_info.pos.x + m_half_texture_uv.x, m_info.pos.y - m_half_texture_uv.y };
+	m_collision_info.pos[TOP_LEFT_VERTEX] = { m_info.pos.x - m_half_texture_uv.x, m_info.pos.y - m_half_texture_uv.y };
+	m_collision_info.pos[BOTTOM_RIGHT_VERTEX] = { m_info.pos.x + m_half_texture_uv.x, m_info.pos.y + m_half_texture_uv.y };
+	m_collision_info.pos[BOTTOM_LEFT_VERTEX] = { m_info.pos.x - m_half_texture_uv.x, m_info.pos.y + m_half_texture_uv.y };
 	// 壁との当たり判定
 	CollisionWall();
 	// 弾発射
@@ -17,12 +22,11 @@ void Player::Update() {
 	}
 	// 弾更新
 	for (auto bullet : m_bullet_list) {
+		// NULLではないときに生成
 		if (bullet != nullptr) {
 			bullet->Update();
 		}
 	}
-	// 敵との当たり判定
-
 }
 /*----更新----*/
 
@@ -49,21 +53,45 @@ void Player::Move() {
 
 /*----壁との当たり判定----*/
 void Player::CollisionWall() {
-	// 右
-	if (m_collision->IsHitBottomRight(m_info.pos.x, Window::WINDOW_W, m_info.half_texture_uv.x) == true) {
+	// 右辺
+	if (m_collision->IsHitRirghtSide(
+		m_collision_info.pos[TOP_RIGHT_VERTEX], 
+		m_collision_info.pos[BOTTOM_RIGHT_VERTEX],
+		{ Window::WINDOW_W, 0 }, 
+		{ Window::WINDOW_W, Window::WINDOW_H }) == true) {
+		m_collision_info.is_hit_side[RIGHT_SIDE] = true;
 		m_info.pos.x -= m_info.speed;
+		m_collision_info.is_hit_side[RIGHT_SIDE] = false;
 	}
-	// 左
-	if (m_collision->IsHitTopLeft(m_info.pos.x, 0, m_info.half_texture_uv.x) == true) {
+	// 左辺
+	if (m_collision->IsHitLeftSide(
+		m_collision_info.pos[TOP_LEFT_VERTEX],
+		m_collision_info.pos[BOTTOM_LEFT_VERTEX],
+		{ 0, -1 }, 
+		{ 0, Window::WINDOW_H })) {
+		m_collision_info.is_hit_side[LEFT_SIDE] = true;
 		m_info.pos.x += m_info.speed;
+		m_collision_info.is_hit_side[LEFT_SIDE] = false;
 	}
-	// 上
-	if (m_collision->IsHitTopLeft(m_info.pos.y, 0, m_info.half_texture_uv.y) == true) {
+	// 上辺
+	if (m_collision->IsHitTopSide(
+		m_collision_info.pos[TOP_LEFT_VERTEX],
+		m_collision_info.pos[TOP_RIGHT_VERTEX],
+		{ -1, 0 }, 
+		{ Window::WINDOW_W, 0 })) {
+		m_collision_info.is_hit_side[TOP_SIDE] = true;
 		m_info.pos.y += m_info.speed;
+		m_collision_info.is_hit_side[TOP_SIDE] = false;
 	}
-	// 下
-	if (m_collision->IsHitBottomRight(m_info.pos.y, Window::WINDOW_H, m_info.half_texture_uv.y) == true) {
+	// 下辺
+	if (m_collision->IsHitBottomSide(
+		m_collision_info.pos[BOTTOM_LEFT_VERTEX],
+		m_collision_info.pos[BOTTOM_RIGHT_VERTEX],
+		{ 0, Window::WINDOW_H },
+		{ Window::WINDOW_W, Window::WINDOW_H })) {
+		m_collision_info.is_hit_side[BOTTOM_SIDE] = true;
 		m_info.pos.y -= m_info.speed;
+		m_collision_info.is_hit_side[BOTTOM_SIDE] = false;
 	}
 }
 /*----壁との当たり判定----*/
@@ -73,6 +101,7 @@ void Player::CollisionWall() {
 void Player::Draw() {
 	// 弾描画
 	for (auto bullet : m_bullet_list) {
+		// NULLではないときに描画
 		if (bullet != nullptr) {
 			bullet->Draw();
 		}

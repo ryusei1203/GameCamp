@@ -9,6 +9,6 @@ PlayerBase::PlayerBase() {
 	// テクスチャサイズ
 	m_texture_uv = ResourceManager::GetInstance().GetTextureData(ResourceManager::TEST1_ID).uv;
 	// テクスチャサイズの半分
-	m_info.half_texture_uv = { m_texture_uv.x / 2,m_texture_uv.y / 2 };
+	m_half_texture_uv = { m_texture_uv.x / 2,m_texture_uv.y / 2 };
 };
 

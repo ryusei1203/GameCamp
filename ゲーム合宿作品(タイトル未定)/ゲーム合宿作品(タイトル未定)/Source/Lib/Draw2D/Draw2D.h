@@ -14,10 +14,17 @@ namespace Draw2D {
 		// テクスチャ座標
 		D3DXVECTOR2 uv;
 	};
-	// 四角形
-		// 四角形描画(中心原点)
+	// 四角形描画(中心原点)
+	/*
+	第一引数 : テクスチャID(ResourceManagerに記載)
+	第二引数 : 座標(D3DXVECTOR2)(中心座標)
+	*/
 	void CenterOriginBox(ResourceManager::TextureID texture_id, D3DXVECTOR2 pos);
 	// 四角形描画(左上原点)
+	/*
+	第一引数 : テクスチャID(ResourceManagerに記載)
+	第二引数 : 座標(D3DXVECTOR2)(中心座標)
+	*/
 	void UpperLeftOriginBox(ResourceManager::TextureID texture_id, D3DXVECTOR2 pos);
 }
 

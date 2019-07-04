@@ -1,6 +1,7 @@
-﻿#include "../../Object/Player/Player.h"
+﻿#include "ObjectManager.h"
+
+#include "../../Object/Player/Player.h"
 #include "../../Object/Enemy/Enemy.h"
-#include "ObjectManager.h"
 
 #include "../../Lib/Draw2D/Draw2D.h"
 
@@ -9,9 +10,10 @@
 ObjectManager::ObjectManager() :
 	back_ground_pos({ 0.f,-2400.f + 600.f }) {
 	// プレイヤー
-	player = new Player();
+	m_player = new Player();
 	// エネミー
-	enemy = new Enemy();
+	m_enemy = new Enemy();
+	//if(m_collision->IsHitRirghtSide(m_player->))
 }
 /*----コンストラクタ----*/
 
@@ -20,9 +22,9 @@ void ObjectManager::Update() {
 	// スクロール
 	back_ground_pos.y += 1.f;
 	// プレイヤー
-	player->Update();
+	m_player->Update();
 	// エネミー
-	enemy->Update();
+	m_enemy->Update();
 }
 /*----更新----*/
 
@@ -31,20 +33,20 @@ void ObjectManager::Draw() {
 	// 背景描画
 	Draw2D::UpperLeftOriginBox(ResourceManager::TEST4_ID, back_ground_pos);
 	// プレイヤー
-	player->Draw();
+	m_player->Draw();
 	// エネミー
-	enemy->Draw();
+	m_enemy->Draw();
 }
 /*----描画----*/
 
 /*----デストラクタ----*/
 ObjectManager::~ObjectManager() {
 	// エネミー
-	delete enemy;
-	enemy = nullptr;
+	delete m_enemy;
+	m_enemy = nullptr;
 	// プレイヤー
-	delete player;
-	player = nullptr;
+	delete m_player;
+	m_player = nullptr;
 }
 /*----デストラクタ----*/
 /*----public----*/

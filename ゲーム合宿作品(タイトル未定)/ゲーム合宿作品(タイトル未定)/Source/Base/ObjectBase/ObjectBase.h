@@ -5,83 +5,82 @@
 
 // オブジェクト基底
 class ObjectBase {
-protected:
-	// enum
-	// 4辺
+public:
+	// 四辺
 	enum Side {
-		TOP,
-		RIGHT,
-		BOTTOM,
-		LEFT,
+		RIGHT_SIDE,
+		LEFT_SIDE,
+		TOP_SIDE,
+		BOTTOM_SIDE,
 
 		MAX_SIDE_NUM
 	};
+	// 四頂点
+	enum Vertex {
+		TOP_RIGHT_VERTEX,
+		TOP_LEFT_VERTEX,
+		BOTTOM_RIGHT_VERTEX,
+		BOTTOM_LEFT_VERTEX,
+
+		MAX_VERTEX_NUM
+	};
 protected:
+	/*----構造体----*/
 	// 基礎情報
 	struct Info {
 		// 座標
 		D3DXVECTOR2 pos;
 		// 移動スピード
 		float speed;
-		// テクスチャサイズの半分
-		D3DXVECTOR2 half_texture_uv;
-		// 4辺の当たり判定
-		bool is_hit[MAX_SIDE_NUM];
 	};
+	// 当たり判定用情報
+	struct CollisionInfo {
+		// 座標
+		D3DXVECTOR2 pos[MAX_VERTEX_NUM];
+		// 当たり判定
+		bool is_hit_side[MAX_SIDE_NUM];
+	};
+	/*----構造体----*/
 public:
 	// コンストラクタ
-	ObjectBase() :
-		m_texture_uv({ 0.f, 0.f }),
-		m_side(TOP),
-		m_collision(new Collision){
-		/*----基礎情報----*/
-		// 座標
-		m_info.pos = { 0.f, 0.f };
-		// 移動スピード
-		m_info.speed = 0.f;
-		// テクスチャサイズの半分
-		m_info.half_texture_uv = { 0.f,0.f };
-		// 4面の当たり判定
-		for (int i = 0; i < MAX_SIDE_NUM; ++i) {
-			m_info.is_hit[i] = false;
-		}
-		/*----基礎情報----*/
-	};
+	ObjectBase();
 	// 更新
 	virtual void Update() = 0;
 	// 描画
 	virtual void Draw() = 0;
 	// デストラクタ
-	virtual ~ObjectBase() {
-		delete m_collision;
-		m_collision = nullptr;	
-	};
+	virtual ~ObjectBase();
+public:
 	/*----ゲッター----*/
-	// 辺の取得
-	Side GetSide() {
-		return m_side;
-	}
 	// 基礎情報の取得
 	Info GetInfo() {
 		return m_info;
 	}
+	// 当たり判定用情報の取得
+	CollisionInfo GetCollisionInfo() {
+		return m_collision_info;
+	}
 	/*----ゲッター----*/
+public:
+	// 当たり判定のセッター
+	void SetIsHit(bool is_hit,Side side) {
+		m_collision_info.is_hit_side[side] = is_hit;
+	}
 protected:
 	/*----変数----*/
 	// テクスチャサイズ
 	D3DXVECTOR2 m_texture_uv;
+	// テクスチャサイズの半分
+	D3DXVECTOR2 m_half_texture_uv;
 	/*----変数----*/
 protected:
-	// 四面当たり判定配列
-	bool m_is_hit[MAX_SIDE_NUM];
-protected:
 	/*----インスタンス----*/
-	// 4辺
-	Side m_side;
 	// 当たり判定
 	Collision *m_collision;
 	// 基礎情報
 	Info m_info;
+	// 当たり判定用情報
+	CollisionInfo m_collision_info;
 	/*----インスタンス----*/
 };
 

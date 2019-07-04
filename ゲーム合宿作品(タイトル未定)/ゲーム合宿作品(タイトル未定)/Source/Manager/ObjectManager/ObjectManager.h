@@ -19,11 +19,16 @@ public :
 private:
 	// 背景座標
 	D3DXVECTOR2 back_ground_pos;
-	// プレイヤーインスタンス
-	PlayerBase *player;
-	// エネミーインスタンス
-	EnemyBase *enemy;
-	// 当たり判定インスタンス
-	Collision *collision;
+private:
+	// エネミーインスタンス配列
+	//std::vector<EnemyBase*> enemy;
+	EnemyBase *m_enemy;
+private:
+	/*----インスタンス----*/
+	// プレイヤー
+	PlayerBase *m_player;
+	// 当たり判定
+	Collision *m_collision;
+	/*----インスタンス----*/
 };
 
