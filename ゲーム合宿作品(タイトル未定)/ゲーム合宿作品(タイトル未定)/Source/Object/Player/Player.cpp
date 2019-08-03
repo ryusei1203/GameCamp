@@ -10,21 +10,22 @@ void Player::Update() {
 	// 移動
 	Move();
 	// 当たり判定用座標の更新
-	m_collision_info.pos[TOP_RIGHT_VERTEX] = { m_info.pos.x + m_half_texture_uv.x, m_info.pos.y - m_half_texture_uv.y };
-	m_collision_info.pos[TOP_LEFT_VERTEX] = { m_info.pos.x - m_half_texture_uv.x, m_info.pos.y - m_half_texture_uv.y };
-	m_collision_info.pos[BOTTOM_RIGHT_VERTEX] = { m_info.pos.x + m_half_texture_uv.x, m_info.pos.y + m_half_texture_uv.y };
-	m_collision_info.pos[BOTTOM_LEFT_VERTEX] = { m_info.pos.x - m_half_texture_uv.x, m_info.pos.y + m_half_texture_uv.y };
+	UpdateCollisionPos();
 	// 壁との当たり判定
 	CollisionWall();
-	// 弾発射
+	// バレット発射(生成)
 	if (KeyInput::GetKeyDown(SPACE_KEY) == true) {
 		m_bullet_list.push_back(new Bullet(m_info.pos));
 	}
-	// 弾更新
+	// バレット更新
 	for (auto bullet : m_bullet_list) {
-		// NULLではないときに生成
 		if (bullet != nullptr) {
 			bullet->Update();
+			// バレットが画面外に出たら削除
+			/*if (m_collision->IsHitTopOrLeftWall(bullet->GetCollisionInfo().pos[TOP_LEFT_VERTEX].y)) {
+				delete bullet;
+				bullet = nullptr;
+			}*/
 		}
 	}
 }
@@ -53,45 +54,21 @@ void Player::Move() {
 
 /*----壁との当たり判定----*/
 void Player::CollisionWall() {
-	// 右辺
-	if (m_collision->IsHitRirghtSide(
-		m_collision_info.pos[TOP_RIGHT_VERTEX], 
-		m_collision_info.pos[BOTTOM_RIGHT_VERTEX],
-		{ Window::WINDOW_W, 0 }, 
-		{ Window::WINDOW_W, Window::WINDOW_H }) == true) {
-		m_collision_info.is_hit_side[RIGHT_SIDE] = true;
-		m_info.pos.x -= m_info.speed;
-		m_collision_info.is_hit_side[RIGHT_SIDE] = false;
-	}
-	// 左辺
-	if (m_collision->IsHitLeftSide(
-		m_collision_info.pos[TOP_LEFT_VERTEX],
-		m_collision_info.pos[BOTTOM_LEFT_VERTEX],
-		{ 0, -1 }, 
-		{ 0, Window::WINDOW_H })) {
-		m_collision_info.is_hit_side[LEFT_SIDE] = true;
-		m_info.pos.x += m_info.speed;
-		m_collision_info.is_hit_side[LEFT_SIDE] = false;
-	}
-	// 上辺
-	if (m_collision->IsHitTopSide(
-		m_collision_info.pos[TOP_LEFT_VERTEX],
-		m_collision_info.pos[TOP_RIGHT_VERTEX],
-		{ -1, 0 }, 
-		{ Window::WINDOW_W, 0 })) {
-		m_collision_info.is_hit_side[TOP_SIDE] = true;
+	// 上辺との当たり判定
+	if(m_collision->IsHitTopOrLeftWall(m_collision_info.pos[TOP_LEFT_VERTEX].y) == true) {
 		m_info.pos.y += m_info.speed;
-		m_collision_info.is_hit_side[TOP_SIDE] = false;
 	}
-	// 下辺
-	if (m_collision->IsHitBottomSide(
-		m_collision_info.pos[BOTTOM_LEFT_VERTEX],
-		m_collision_info.pos[BOTTOM_RIGHT_VERTEX],
-		{ 0, Window::WINDOW_H },
-		{ Window::WINDOW_W, Window::WINDOW_H })) {
-		m_collision_info.is_hit_side[BOTTOM_SIDE] = true;
+	// 下辺との当たり判定
+	if (m_collision->IsHitBottomWall(m_collision_info.pos[BOTTOM_RIGHT_VERTEX].y) == true) {
 		m_info.pos.y -= m_info.speed;
-		m_collision_info.is_hit_side[BOTTOM_SIDE] = false;
+	}
+	// 右辺との当たり判定
+	if (m_collision->IsHitRightWall(m_collision_info.pos[BOTTOM_RIGHT_VERTEX].x) == true) {
+		m_info.pos.x -= m_info.speed;
+	}
+	// 左辺との当たり判定
+	if (m_collision->IsHitTopOrLeftWall(m_collision_info.pos[TOP_LEFT_VERTEX].x) == true) {
+		m_info.pos.x += m_info.speed;
 	}
 }
 /*----壁との当たり判定----*/

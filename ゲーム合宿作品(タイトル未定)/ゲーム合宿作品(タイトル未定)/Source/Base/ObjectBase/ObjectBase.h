@@ -15,12 +15,10 @@ public:
 
 		MAX_SIDE_NUM
 	};
-	// 四頂点
+	// 二頂点
 	enum Vertex {
-		TOP_RIGHT_VERTEX,
 		TOP_LEFT_VERTEX,
 		BOTTOM_RIGHT_VERTEX,
-		BOTTOM_LEFT_VERTEX,
 
 		MAX_VERTEX_NUM
 	};
@@ -32,13 +30,19 @@ protected:
 		D3DXVECTOR2 pos;
 		// 移動スピード
 		float speed;
+		// テクスチャサイズ
+		D3DXVECTOR2 texture_uv;
+		// 生存フラグ
+		bool dead;
 	};
 	// 当たり判定用情報
 	struct CollisionInfo {
 		// 座標
 		D3DXVECTOR2 pos[MAX_VERTEX_NUM];
 		// 当たり判定
-		bool is_hit_side[MAX_SIDE_NUM];
+		bool is_hit;
+		// テクスチャサイズの半分
+		D3DXVECTOR2 half_texture_uv;
 	};
 	/*----構造体----*/
 public:
@@ -63,16 +67,9 @@ public:
 	/*----ゲッター----*/
 public:
 	// 当たり判定のセッター
-	void SetIsHit(bool is_hit,Side side) {
-		m_collision_info.is_hit_side[side] = is_hit;
+	void SetIsHit(bool is_hit) {
+		m_collision_info.is_hit = is_hit;
 	}
-protected:
-	/*----変数----*/
-	// テクスチャサイズ
-	D3DXVECTOR2 m_texture_uv;
-	// テクスチャサイズの半分
-	D3DXVECTOR2 m_half_texture_uv;
-	/*----変数----*/
 protected:
 	/*----インスタンス----*/
 	// 当たり判定
@@ -82,5 +79,8 @@ protected:
 	// 当たり判定用情報
 	CollisionInfo m_collision_info;
 	/*----インスタンス----*/
+protected:
+	// 当たり判定用座標更新
+	void UpdateCollisionPos();
 };
 

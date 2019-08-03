@@ -2,6 +2,7 @@
 
 #include "../../Base/PlayerBase/PlayerBase.h"
 #include "../../Base/EnemyBase/EnemyBase.h"
+#include "../../Base/BulletBase/BulletBase.h"
 
 #include "../../Lib/Collision/Collision.h"
 
@@ -21,7 +22,7 @@ private:
 	D3DXVECTOR2 back_ground_pos;
 private:
 	// エネミーインスタンス配列
-	//std::vector<EnemyBase*> enemy;
+	std::vector<EnemyBase*> enemy;
 	EnemyBase *m_enemy;
 private:
 	/*----インスタンス----*/

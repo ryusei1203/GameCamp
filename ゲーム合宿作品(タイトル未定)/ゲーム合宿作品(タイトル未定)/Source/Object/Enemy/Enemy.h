@@ -10,10 +10,12 @@ class Enemy : public EnemyBase {
 public :
 	// コンストラクタ
 	Enemy() {
-		// 座標(初期化)
+		// 座標
 		m_info.pos = { Window::WINDOW_W / 2,16.f };
-		m_texture_uv = ResourceManager::GetInstance().GetTextureData(ResourceManager::TEST2_ID).uv;
-		m_half_texture_uv = { m_texture_uv.x, m_texture_uv.y };
+		// テクスチャサイズ
+		m_info.texture_uv = ResourceManager::GetInstance().GetTextureData(ResourceManager::TEST2_ID).uv;
+		// テクスチャサイズの半分
+		m_collision_info.half_texture_uv = { m_info.texture_uv.x, m_info.texture_uv.y };
 	};
 private:
 	// デストラクタ

@@ -15,7 +15,6 @@ public:
 	// デストラクタ
 	~PlayerBase() {};
 protected:
-	// 配列
 	// バレットインスタンス
 	std::vector<BulletBase*> m_bullet_list;
 };

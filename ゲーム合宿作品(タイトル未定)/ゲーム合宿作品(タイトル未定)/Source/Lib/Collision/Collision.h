@@ -9,53 +9,21 @@ public :
 	Collision() {};
 	// デストラクタ
 	~Collision() {};
-	// 右辺当たり判定
+	// 上壁、左辺の当たり判定
+	bool IsHitTopOrLeftWall(float pos);
+	// 下壁の当たり判定
+	bool IsHitBottomWall(float pos);
+	// 右辺壁の当たり判定
+	bool IsHitRightWall(float pos);
 	/*
-		第一引数 : オブジェクトの右上座標
-		第二引数 : オブジェクトの右下座標
-		第三引数 : 当たり判定を取りたいオブジェクトの左上座標
-		第四引数 : 当たり判定を取りたいオブジェクトの左下座標
+		// 四角形同士の当たり判定
+		第一引数 : 一つ目の四角形の左上頂点
+		第二引数 : 一つ目の四角形の右下頂点
+		第三引数 : 二つ目の四角形の左上頂点
+		第四引数 : 二つ目の四角形の右下頂点
 	*/
-	bool IsHitRirghtSide(
-		D3DXVECTOR2 top_right_pos1, 
-		D3DXVECTOR2 bottom_right_pos1, 
-		D3DXVECTOR2 top_left_pos2, 
-		D3DXVECTOR2 bottom_left_pos2);
-	// 左辺当たり判定
-	/*
-		第一引数 : オブジェクトの左上座標
-		第二引数 : オブジェクトの左下座標
-		第三引数 : 当たり判定を取りたいオブジェクトの右上座標
-		第四引数 : 当たり判定を取りたいオブジェクトの右下座標
-	*/
-	bool IsHitLeftSide(
-		D3DXVECTOR2 top_left_pos1, 
-		D3DXVECTOR2 bottom_left_pos1, 
-		D3DXVECTOR2 top_right_pos2, 
-		D3DXVECTOR2 bottom_right_pos2);
-	// 上辺当たり判定
-	/*
-		第一引数 : オブジェクトの左上座標
-		第二引数 : オブジェクトの右上座標
-		第三引数 : 当たり判定を取りたいオブジェクトの左下座標
-		第四引数 : 当たり判定を取りたいオブジェクトの右下座標
-	*/
-	bool IsHitTopSide(
-		D3DXVECTOR2 top_left_pos1, 
-		D3DXVECTOR2 top_right_pos1,
-		D3DXVECTOR2 bottom_left_pos2, 
-		D3DXVECTOR2 bottom_right_pos2);
-	// 下辺当たり判定
-	/*
-		第一引数 : オブジェクトの左下座標
-		第二引数 : オブジェクトの右下座標
-		第三引数 : 当たり判定を取りたいオブジェクトの左上座標
-		第四引数 : 当たり判定を取りたいオブジェクトの右上座標
-	*/
-	bool IsHitBottomSide(
-		D3DXVECTOR2 bottom_left_pos1, 
-		D3DXVECTOR2 bottom_right_pos1,
-		D3DXVECTOR2 top_left_pos2, 
-		D3DXVECTOR2 top_right_pos2);
+	bool IsHitSquares(
+		D3DXVECTOR2 top_left_pos1, D3DXVECTOR2 bottom_right_pos1, 
+		D3DXVECTOR2 top_left_pos2, D3DXVECTOR2 bottom_right_pos2);
 };
 
